@@ -3437,44 +3437,6 @@ body[data-scene="stars"] .star-hint:not(:empty) {
   display: block !important;
 }
 
-/* 14.1 Archival Colophon Ribbon inside Contents Leaf */
-.colophon-ribbon {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  padding: 16px 0 18px;
-  margin-bottom: 6px;
-  border-bottom: 1px solid rgba(50, 73, 60, 0.14);
-}
-.colophon-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 4px;
-  background: rgba(252, 249, 240, 0.38);
-  border: 1px solid rgba(50, 73, 60, 0.10);
-  text-align: left;
-  transition: background-color 0.25s var(--atelier-ease), border-color 0.25s, transform 0.25s var(--atelier-ease);
-}
-.colophon-stat strong {
-  font: italic 500 clamp(22px, 2.2vw, 30px)/1 Georgia, var(--serif);
-  color: var(--atelier-terracotta);
-  letter-spacing: 0.02em;
-}
-.colophon-stat span {
-  font: 12.5px/1.4 var(--serif);
-  color: var(--atelier-ink);
-  letter-spacing: 0.06em;
-}
-@media (hover: hover) and (pointer: fine) {
-  .colophon-stat:hover {
-    background: rgba(252, 249, 240, 0.78);
-    border-color: rgba(176, 110, 82, 0.36);
-    transform: translateY(-2px);
-  }
-}
-
 /* 14.2 Home Curated Section ("我们的特别收录") */
 .cover .home-curated {
   --binding: clamp(18px, 4.6vw, 76px);
@@ -3831,9 +3793,6 @@ body[data-scene="stars"] .star-hint:not(:empty) {
   .lakes-swatch-strip {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .colophon-ribbon {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 720px) {
@@ -3842,13 +3801,6 @@ body[data-scene="stars"] .star-hint:not(:empty) {
     margin-inline: -3vw;
     padding-top: 26px;
     padding-bottom: 32px;
-  }
-  .colophon-ribbon {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-  .colophon-stat:last-child {
-    grid-column: 1 / -1;
   }
   .lakes-swatch-strip {
     display: flex;
@@ -5215,9 +5167,7 @@ const contentsLeaf=$('.memoir-directory')||el('section','memoir-directory');
 contentsLeaf.replaceChildren();contentsLeaf.tabIndex=-1;
 const contentsHeading=el('div','memoir-directory-heading');
 contentsHeading.append(el('h2','','目录'),el('span','','01 — 06'));
-const colophonRibbon=el('div','colophon-ribbon');
-colophonRibbon.setAttribute('aria-label','山海与烟火馆藏统计');
-contentsLeaf.append(contentsHeading,colophonRibbon,chapterIndex);homeJourneys.before(contentsLeaf);
+contentsLeaf.append(contentsHeading,chapterIndex);homeJourneys.before(contentsLeaf);
 
 const resumeTrip=el('button','resume-trip');
 resumeTrip.hidden=true;contentsHeading.after(resumeTrip);
@@ -5234,29 +5184,6 @@ function refreshTripBookmark(){
     const picker=journalReading.querySelector('.trip-route-nav select');
     if(picker){picker.value=String(index);picker.dispatchEvent(new Event('change'));}
   };
-}
-
-function renderColophonRibbon(){
-  colophonRibbon.replaceChildren();
-  const trips=activeTrips();
-  const stopsCount=trips.reduce((n,t)=>n+(t.stops?.length||0),0);
-  const foodCount=activeRestaurants().length;
-  const recipeCount=activeRecipes().length;
-  const showCount=typeof SHARED_SHOWS!=='undefined'?SHARED_SHOWS.length:9;
-  const stats=[
-    [String(trips.length).padStart(2,'0'),'段山海长路',()=>{journalMode='reading';go('travel');}],
-    [String(stopsCount).padStart(2,'0'),'处沿途落脚',()=>{journalMode='map';go('travel');renderTravel();fitTravelMap();}],
-    [String(foodCount).padStart(2,'0'),'家城市食记',()=>{switchFood('restaurants');go('food');}],
-    [String(recipeCount).padStart(2,'0'),'道家常小灶',()=>{switchFood('kitchen');go('food');}],
-    [String(showCount).padStart(2,'0'),'部同看剧综',()=>openScreenRoom()]
-  ];
-  for(const [num,label,action] of stats){
-    const item=el('button','colophon-stat');
-    item.type='button';
-    item.append(el('strong','',num),el('span','',label));
-    item.onclick=action;
-    colophonRibbon.append(item);
-  }
 }
 
 // Curated Special Exhibit on Home: "高原十措 · 阿里看湖图鉴" & "偏爱与插曲 · 私房暗号"
@@ -5454,7 +5381,6 @@ const renderBeforeBookmark=render;
 render=function(){
   renderBeforeBookmark();
   refreshTripBookmark();
-  renderColophonRibbon();
   renderCuratedSection();
 };
 
