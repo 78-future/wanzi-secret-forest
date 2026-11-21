@@ -3064,10 +3064,13 @@ body[data-scene="home"].reading-contents :is(.header, .footer) {
 }
 .letter .paper {
   opacity: 1;
+  width: min(680px, 92vw) !important;
+  max-height: calc(100dvh - 200px) !important;
+  padding: clamp(32px, 4.5vw, 50px) clamp(26px, 5vw, 58px) 34px !important;
   background:
-    radial-gradient(ellipse 80% 50% at 15% 10%, rgba(255, 253, 245, 0.92), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 15% 10%, rgba(255, 253, 245, 0.94), transparent 70%),
     linear-gradient(180deg, #faf5e8 0%, #f5eedd 100%) !important;
-  color: #364539 !important;
+  color: #324136 !important;
   border: 1px solid #dfd3b8 !important;
   border-radius: 3px;
   box-shadow:
@@ -3079,16 +3082,21 @@ body[data-scene="home"].reading-contents :is(.header, .footer) {
 }
 .letter .paper-heading {
   color: var(--atelier-ink) !important;
-  border-bottom: 1px solid rgba(154, 142, 114, 0.32) !important;
+  border-bottom: 1px solid rgba(154, 142, 114, 0.30) !important;
+  font-size: clamp(21px, 2.2vw, 25px) !important;
 }
 .letter .paper-body {
-  color: #3b4b3e !important;
+  color: #364539 !important;
+  font-size: clamp(15px, 1.35vw, 16.5px) !important;
+  line-height: 2.15 !important;
+  letter-spacing: 0.03em !important;
+  text-align: justify;
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
     transparent calc(2.15em - 1px),
-    rgba(138, 144, 118, 0.16) calc(2.15em - 1px),
-    rgba(138, 144, 118, 0.16) 2.15em
+    rgba(138, 144, 118, 0.14) calc(2.15em - 1px),
+    rgba(138, 144, 118, 0.14) 2.15em
   ) !important;
 }
 .letter .paper-placeholder {
@@ -3437,250 +3445,6 @@ body[data-scene="stars"] .star-hint:not(:empty) {
   display: block !important;
 }
 
-/* 14.2 Home Curated Section ("我们的特别收录") */
-.cover .home-curated {
-  --binding: clamp(18px, 4.6vw, 76px);
-  padding: clamp(28px, 4.4vw, 68px) var(--binding) clamp(36px, 5vw, 76px);
-  background: linear-gradient(180deg, #f3f0e5 0%, #edeae0 55%, #eeece0 100%);
-  border-top: 1px solid var(--atelier-rule);
-  color: var(--atelier-ink);
-  scroll-margin-top: clamp(92px, 11.5vh, 118px);
-}
-.cover .curated-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 16px;
-  padding-bottom: 16px;
-  margin-bottom: clamp(22px, 3vw, 34px);
-  border-bottom: 1px solid var(--atelier-rule);
-}
-.curated-eyebrow {
-  display: block;
-  font: 11px/1.5 Georgia, var(--serif);
-  letter-spacing: 0.18em;
-  color: var(--atelier-terracotta);
-  margin-bottom: 6px;
-}
-.cover .curated-heading h2 {
-  font: 400 clamp(26px, 3vw, 41px)/1.25 var(--serif);
-  color: var(--atelier-ink);
-  letter-spacing: 0.06em;
-  margin: 0;
-}
-
-/* Tibetan Ten Lakes Swatch Atlas ("高原十措 · 一措再措色谱") */
-.lakes-atlas-box {
-  background:
-    radial-gradient(ellipse 75% 60% at 85% 10%, rgba(188, 218, 224, 0.25), transparent 65%),
-    linear-gradient(145deg, #f8f5ec 0%, #f1efe4 100%);
-  border: 1px solid rgba(56, 78, 62, 0.14);
-  border-radius: 6px;
-  padding: clamp(20px, 3vw, 36px);
-  box-shadow: var(--atelier-shadow-sm);
-  margin-bottom: clamp(28px, 4vw, 48px);
-}
-.lakes-atlas-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 14px 32px;
-  padding-bottom: 18px;
-  margin-bottom: 22px;
-  border-bottom: 1px dashed rgba(56, 78, 62, 0.18);
-}
-.lakes-kicker {
-  display: inline-block;
-  font: 11px/1.4 var(--serif);
-  letter-spacing: 0.16em;
-  color: #2c6d7a;
-  background: rgba(44, 109, 122, 0.10);
-  border: 1px solid rgba(44, 109, 122, 0.22);
-  padding: 3px 10px;
-  border-radius: 999px;
-  margin-bottom: 8px;
-}
-.lakes-atlas-header h3 {
-  font: 500 clamp(21px, 2.3vw, 31px)/1.3 var(--serif);
-  color: var(--atelier-ink);
-  margin: 0;
-  letter-spacing: 0.04em;
-}
-.lakes-atlas-header > p {
-  font: 13px/1.85 var(--serif);
-  color: var(--atelier-ink-soft);
-  max-width: 38em;
-  margin: 0;
-}
-.lakes-swatch-strip {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 18px 15px;
-}
-.lake-swatch-card {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  text-align: left;
-  padding: 7px 7px 12px;
-  background: #fdfbf4;
-  border: 1px solid rgba(56, 78, 62, 0.12);
-  border-top: 3px solid var(--lake-color, #2a8c96);
-  border-radius: 3px;
-  box-shadow: 0 3px 10px rgba(24, 42, 33, 0.05);
-  transition: transform 0.35s var(--atelier-ease), box-shadow 0.35s var(--atelier-ease), border-color 0.35s;
-}
-.lake-swatch-thumb {
-  position: relative;
-  aspect-ratio: 1.48;
-  background: #dce5e7;
-  overflow: hidden;
-  border-radius: 2px;
-}
-.lake-swatch-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.55s var(--atelier-ease);
-}
-.lake-color-chip {
-  position: absolute;
-  left: 7px;
-  bottom: 7px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: rgba(15, 29, 26, 0.76);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #f8f4e8;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-}
-.lake-color-chip i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--lake-color, #2a8c96);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.65);
-}
-.lake-color-chip small {
-  font: 10px/1.3 var(--serif);
-  letter-spacing: 0.06em;
-}
-.lake-swatch-info {
-  padding: 10px 4px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.lake-order {
-  font: 10px/1.4 Georgia, var(--serif);
-  color: #6b7b73;
-  letter-spacing: 0.04em;
-}
-.lake-swatch-info strong {
-  font: 500 17px/1.35 var(--serif);
-  color: var(--atelier-ink);
-  transition: color 0.25s;
-}
-.lake-swatch-info p {
-  font: 11.5px/1.65 var(--serif);
-  color: var(--atelier-ink-soft);
-  margin: 2px 0 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-@media (hover: hover) and (pointer: fine) {
-  .lake-swatch-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 26px rgba(20, 42, 38, 0.13);
-  }
-  .lake-swatch-card:hover .lake-swatch-thumb img {
-    transform: scale(1.05);
-  }
-  .lake-swatch-card:hover .lake-swatch-info strong {
-    color: var(--lake-color, #2a8c96);
-  }
-}
-
-/* Curated Inside-Joke Capsules ("旅途暗号与高光小插曲") */
-.curated-subhead {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-.curated-subhead h3 {
-  font: 500 clamp(20px, 2.1vw, 28px)/1.3 var(--serif);
-  color: var(--atelier-ink);
-  margin: 0;
-}
-.curated-subhead span {
-  font: 12px/1.5 var(--serif);
-  color: var(--atelier-muted);
-  letter-spacing: 0.06em;
-}
-.curated-capsules-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px 22px;
-}
-.curated-capsule {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: clamp(18px, 2.4vw, 28px);
-  background: linear-gradient(155deg, #fbf9f1 0%, #f5f1e4 100%);
-  border: 1px solid rgba(56, 78, 62, 0.14);
-  border-left: 3px solid var(--atelier-terracotta);
-  border-radius: 4px;
-  box-shadow: var(--atelier-shadow-sm);
-  transition: transform 0.3s var(--atelier-ease), box-shadow 0.3s var(--atelier-ease);
-}
-.capsule-badge {
-  font: 11px/1.4 var(--serif);
-  letter-spacing: 0.12em;
-  color: var(--atelier-terracotta);
-  margin-bottom: 8px;
-}
-.curated-capsule h4 {
-  font: 500 clamp(18px, 1.7vw, 22px)/1.45 var(--serif);
-  color: var(--atelier-ink);
-  margin: 0 0 8px;
-}
-.curated-capsule p {
-  font: 13px/1.85 var(--serif);
-  color: var(--atelier-ink-soft);
-  margin: 0 0 14px;
-}
-.capsule-link {
-  margin-top: auto;
-  font: 12.5px/1.4 var(--serif);
-  color: var(--atelier-pine);
-  border-bottom: 1px solid rgba(48, 70, 56, 0.35);
-  padding: 4px 0;
-  transition: color 0.2s, border-color 0.2s, transform 0.2s var(--atelier-ease);
-}
-@media (hover: hover) and (pointer: fine) {
-  .curated-capsule:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--atelier-shadow-md);
-  }
-  .curated-capsule:hover .capsule-link {
-    color: var(--atelier-terracotta);
-    border-bottom-color: var(--atelier-terracotta);
-    transform: translateX(3px);
-  }
-}
-
 /* 14.3 Travel Sub-Chapter Passage Jump Pills */
 .trip-passage-pills {
   display: flex;
@@ -3774,54 +3538,7 @@ body[data-scene="stars"] .star-hint:not(:empty) {
   transform: translateX(-50%) translateY(0);
 }
 
-/* 14.7 Vintage Letter Postmark Header */
-.paper-postmark {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-bottom: 12px;
-  margin-bottom: 14px;
-  border-bottom: 1px dashed rgba(138, 126, 98, 0.38);
-  font: 10.5px/1.4 Georgia, var(--serif);
-  letter-spacing: 0.14em;
-  color: #7d725b;
-}
-
-@media (max-width: 960px) {
-  .lakes-swatch-strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 720px) {
-  .cover .home-curated {
-    --binding: clamp(14px, 4vw, 27px);
-    margin-inline: -3vw;
-    padding-top: 26px;
-    padding-bottom: 32px;
-  }
-  .lakes-swatch-strip {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding-bottom: 6px;
-  }
-  .lake-swatch-card {
-    flex: 0 0 66vw;
-    max-width: 240px;
-    scroll-snap-align: start;
-  }
-  .curated-capsules-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .curated-subhead {
-    flex-direction: column;
-    gap: 4px;
-  }
   .trip-passage-pills {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -4119,12 +3836,12 @@ for(const kind of ['food','travel'])$('#'+kind+'-expand').onclick=()=>setMapImme
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!viewer.open&&!modal.open){for(const kind of ['food','travel'])setMapImmersive(kind,false);}});
 
 // Personal journeys. Seed once; subsequent edits stay owned by the reader.
-const JOURNAL_CONTENT = {"version": 1, "trips": [{"id": "journal-nanjing", "title": "金陵晚风", "subtitle": "第一次一起出门 · 南京", "date": "", "endDate": "", "transport": "慢走 / 夜骑", "note": "我们俩的第一趟旅行。那时还没开始后来动辄几千公里的长途自驾，也不赶景点，就在南京城里吃大牌档、走古寺、逛博物院和书店，天黑了就并排骑车吹晚风。现在回头看，后来那么长的路，都是从这一晚的晚风里出发的。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "nj-food", "city": "南京", "lon": 118.7969, "lat": 32.0603, "address": "南京", "date": "", "image": "", "highlights": "第一顿南京大牌档", "note": "我们出门旅行的第一顿饭。两个人对着菜单点了一桌子金陵小吃，在花灯和鼎沸人声里，热热闹闹地把第一趟同行的序幕拉开了。", "photoKey": "南京大排档", "restaurantIds": ["food-nanjing-dapaidang"]}, {"id": "nj-temple", "city": "鸡鸣寺", "lon": 118.7902, "lat": 32.0623, "address": "鸡鸣寺", "date": "", "image": "", "highlights": "古寺黄墙与香火", "note": "顺着坡道慢慢走上鸡鸣寺。不求走得多快，两个人并肩在古寺黄墙下晃晃悠悠，连呼吸都跟着慢了下来。", "photoKey": "鸡鸣寺"}, {"id": "nj-avenue", "city": "梧桐大道", "lon": 118.8365, "lat": 32.0526, "address": "梧桐大道", "date": "", "image": "", "highlights": "梧桐树影底下的慢步", "note": "南京最迷人的就是头顶连成拱廊的梧桐。阳光透过枝叶筛下来，两个人踩着树影慢慢走，连说话的语速都会不自觉放轻。", "photoKey": "梧桐大道", "locationNote": "只记得那天在梧桐树影底下走了很久，地图先标在陵园路一带，哪天一起翻相册再对对走过的是哪一段。"}, {"id": "nj-museum", "city": "南京博物院", "lon": 118.8225, "lat": 32.0399, "address": "南京博物院", "date": "", "image": "", "highlights": "在旧时光里泡一下午", "note": "很喜欢两个人一起安安静静逛博物院的感觉，隔着玻璃看那些千百年前的器物，看到有意思的细节就凑过去小声聊两句。", "photoKey": "南京博物院"}, {"id": "nj-bookstore", "city": "先锋书店", "lon": 118.7969, "lat": 32.0603, "address": "先锋书店", "date": "", "image": "", "highlights": "拐进先锋书店", "note": "从博物院出来又去逛了先锋书店。在长长的书架坡道间走走停停，连并排站着挑张明信片都觉得很开心。", "photoKey": "先锋书店", "locationNote": "具体去的是五台山总店还是哪处分店留待我们一起确认，地图暂落在南京城中。"}, {"id": "nj-night", "city": "南京", "lon": 118.7969, "lat": 32.0603, "address": "南京", "date": "", "image": "", "highlights": "入夜后的单车与晚风", "note": "到了晚上，借两辆单车在南京街头慢慢骑。晚风迎面吹过来的时候，突然觉得只要两个人在一起，哪怕什么攻略都不做也特别好。", "photoKey": "南京"}], "photoKey": "南京", "coverPhotoKey": "梧桐大道"}, {"id": "journal-east-coast", "title": "江南入海", "subtitle": "第一次长途自驾 · 江浙皖闽大环线", "date": "", "endDate": "", "transport": "第一次长途自驾", "note": "从上海看新国辩、刷迪士尼开始，一脚油门开启了我们第一次长途自驾。一路往南穿过江浙、皖南和福建直到海边。这趟路上有凌晨五点摸黑上山的刺激，有走错路撞见野生土楼的惊喜，也有为了再吃一口烤馕、心甘情愿专门绕回衢州的执念。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "east-shanghai", "city": "上海", "lon": 121.4737, "lat": 31.2304, "address": "上海", "date": "", "image": "", "highlights": "新国辩现场的开场哨", "note": "这一大圈长途自驾的起点在上海。真正握上方向盘出发前，我们先去现场看了心心念念的新国辩。", "photoKey": "上海"}, {"id": "east-disney", "city": "上海迪士尼", "lon": 121.657, "lat": 31.1434, "address": "上海迪士尼", "date": "", "image": "", "highlights": "创极速光轮与那碗老鸭汤", "note": "创极速光轮俯冲出去那一刻太爽了！更没想到的是，在迪士尼里喝到了一碗极其惊艳的酸萝卜老鸭汤，到现在都和过山车一样让人念念不忘。", "photoKey": "上海迪士尼", "restaurantIds": ["food-disney-duck"]}, {"id": "east-shaoxing", "city": "绍兴", "lon": 120.5802, "lat": 30.0024, "address": "绍兴", "date": "", "image": "", "highlights": "课本里的鲁迅故里", "note": "离开上海，方向盘真正交到我们自己手里。自驾第一站开进绍兴，在青石板、白墙和乌篷船边逛了鲁迅故里。", "photoKey": "绍兴鲁迅故里"}, {"id": "east-wuzhen", "city": "乌镇", "lon": 120.4876, "lat": 30.7433, "address": "乌镇", "date": "", "image": "", "highlights": "嘉兴乌镇 · 水巷摇橹声", "note": "从绍兴北上嘉兴乌镇，沿着水巷和石桥慢慢走，看廊棚下的灯影一点点落进水里。", "photoKey": "乌镇"}, {"id": "east-hangzhou", "city": "杭州", "lon": 120.1551, "lat": 30.2741, "address": "杭州", "date": "", "image": "", "highlights": "穿城而过的江南风", "note": "顺着高速一路开往杭州，车窗外的树色与水气越来越有江南腹地的温润感。", "photoKey": "杭州"}, {"id": "east-quzhou", "city": "衢州", "lon": 118.8595, "lat": 28.9701, "address": "衢州", "date": "", "image": "", "highlights": "一口封神的烤馕与猛火炒粉", "note": "衢州的炒粉锅气十足，但更绝的是一家新疆烧烤店的烤馕——刚出炉焦香烫手，好吃到我们一路往南开还一路惦记，直接埋下了返程专门绕回来再吃一顿的伏笔。", "photoKey": "衢州烤馕", "restaurantIds": ["food-quzhou-noodles", "food-quzhou-bbq"]}, {"id": "east-mountain", "city": "铜锣山", "lon": 118.8595, "lat": 28.9701, "address": "铜锣山", "date": "", "image": "", "highlights": "凌晨五点的山路与大雾", "note": "为了看日出，清晨五点摸黑上山。起初整条山路只有我们两个人，路边还时不时冒出几座土墓，刺激得手心冒汗。结果山顶云雾太厚，日出连影子都没露，但两个人并肩站在晨雾里的那股劲儿，比看到日出还难忘。", "photoKey": "铜锣山", "locationNote": "山名照着我们的记忆记作「铜锣山」，具体是衢州周边的哪座山头留待以后考证，地图先标在衢州一带。"}, {"id": "east-huangshan", "city": "黄山", "lon": 118.3375, "lat": 29.7147, "address": "黄山", "date": "", "image": "", "highlights": "白墙黛瓦的徽州古村", "note": "开进安徽黄山一带，穿梭在白墙黑瓦、马头墙高耸的古老徽派村落里，像把车开进了一幅旧水墨。", "photoKey": "黄山徽派村落"}, {"id": "east-zhangzhou", "city": "漳州", "lon": 117.6471, "lat": 24.513, "address": "漳州", "date": "", "image": "", "highlights": "走错路撞见的野生土楼", "note": "在漳州找野生土楼的时候不小心开错了路，结果误打误撞拐进了一条极其安静漂亮的乡间小道，沿途尽是没有游客的老村子。有时候最喜欢的风景，恰恰是导航导错的那一段。", "photoKey": "漳州土楼云水谣"}, {"id": "east-yunshuiyao", "city": "云水谣", "lon": 117.0956, "lat": 24.6584, "address": "云水谣", "date": "", "image": "", "highlights": "古榕树下的溪水与土楼", "note": "在云水谣的大榕树和鹅卵石溪水边走走停停，看夯土围起的圆形土楼稳稳立在闽南山谷里。", "photoKey": "漳州土楼云水谣"}, {"id": "east-xiamen", "city": "厦门", "lon": 118.0894, "lat": 24.4798, "address": "厦门", "date": "", "image": "", "highlights": "海风散步与吃不惯的姜母鸭", "note": "终于开到了海边。晚上在厦门吹着海风散步特别舒服；也是在这儿第一次挑战正宗姜母鸭——结果姜味猛烈到远超预期，两个人面面相觑，实在吃不惯，哈哈。", "photoKey": "厦门", "restaurantIds": ["food-xiamen-duck"]}, {"id": "east-quanzhou", "city": "泉州", "lon": 118.6759, "lat": 24.8741, "address": "泉州", "date": "", "image": "", "highlights": "西街烟火与第一次一起簪花", "note": "在热闹鲜活的泉州西街，我们第一次一起戴上了簪花围。镜头里花团锦簇的样子，真的特别好看。", "photoKey": "泉州西街"}, {"id": "east-fuzhou", "city": "福州", "lon": 119.2965, "lat": 26.0745, "address": "福州", "date": "", "image": "", "highlights": "北上途中的榕城一瞥", "note": "从泉州顺着海岸线往北开，在福州歇脚停留，慢慢往返程的方向走。", "photoKey": "福州"}, {"id": "east-xiapu", "city": "霞浦", "lon": 120.0056, "lat": 26.8852, "address": "霞浦", "date": "", "image": "", "highlights": "只借到一小时的滩涂海岸", "note": "因为后面还要赶路，在霞浦只匆匆停了一个小时。虽然只是和闽东的海风打了个照面，也算在海岸线上按下了一枚快门。", "photoKey": "霞浦"}, {"id": "east-quzhou-return", "city": "衢州", "lon": 118.8595, "lat": 28.9701, "address": "衢州", "date": "", "image": "", "highlights": "为了那口烤馕，真的杀了个回马枪", "note": "走了一整路还是忘不了衢州那家新疆烧烤店的烤馕。于是在回上海的后半程，我们干脆一不做二不休，专门绕道奔波回衢州，实实在在又去吃了一顿才甘心。", "photoKey": "衢州", "restaurantIds": ["food-quzhou-bbq"]}, {"id": "east-qiyuan", "city": "嘉兴绮园", "lon": 120.9495, "lat": 30.5224, "address": "嘉兴绮园", "date": "", "image": "", "highlights": "收尾前的江南园林", "note": "回上海交车返程之前，又顺路拐进嘉兴绮园逛了一圈，在假山曲桥与古树间给这趟长途自驾收个慢悠悠的尾。", "photoKey": "嘉兴绮园"}, {"id": "east-shanghai-return", "city": "上海", "lon": 121.4737, "lat": 31.2304, "address": "上海", "date": "", "image": "", "highlights": "画完第一个长途大圈", "note": "江浙皖闽兜了一大圈，最后稳稳把车开回上海。我们的第一次长途自驾，圆满收官。", "photoKey": "上海"}], "photoKey": "乌镇", "coverPhotoKey": "乌镇"}, {"id": "journal-changsha-kaili", "title": "湘黔寻味", "subtitle": "长沙与凯里 · 被馋虫带偏的路线", "date": "", "endDate": "", "transport": "寻味自驾", "note": "这一趟彻头彻尾是由胃口指挥的旅行。先在长沙把黑色经典、茶颜悦色和天宝兄弟吃成了我们俩雷打不动的「三大巨头」；吃高兴了又突发奇想，一脚油门直接开去贵州凯里。结果牛滚荡那一锅白酸汤，直接给下一次再来贵州埋下了钩子。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "taste-changsha", "city": "长沙", "lon": 112.9388, "lat": 28.2282, "address": "长沙", "date": "", "image": "", "highlights": "雷打不动的长沙三巨头", "note": "在长沙街头左手茶颜悦色、右手黑色经典，晚上再去天宝兄弟剥小龙虾。这三样凑在一起，就是我们心里任何城市都替代不了的快乐老家。", "photoKey": "长沙", "restaurantIds": ["food-changsha-heise", "food-changsha-chayan", "food-changsha-tianbao"]}, {"id": "taste-kaili", "city": "凯里", "lon": 107.9773, "lat": 26.5888, "address": "凯里", "date": "", "image": "", "highlights": "牛滚荡 · 一见钟情的白酸汤", "note": "旅途中突发奇想，一脚油门开到了贵州凯里。结果在牛滚荡喝到了人生白酸汤——酸得醇厚清亮，越煮越鲜，当场封为我们俩心里的白月光。", "photoKey": "凯里", "restaurantIds": ["food-kaili-niugundang"]}, {"id": "taste-market", "city": "黔东南赶集", "lon": 107.9773, "lat": 26.5888, "address": "黔东南赶集", "date": "", "image": "", "highlights": "集市上的发簪与六七十年代草药书", "note": "撞上黔东南赶集，两个人兴致勃勃地在摊位间淘宝。丸子挑中了一支特别好看的簪子，我则淘到了一本上世纪六七十年代编纂的贵州草药老书，各自捧着心头好心满意足。", "photoKey": "凯里", "locationNote": "当时逛的集市名字还没记全，先落在凯里，留着那天赶集的烟火气。"}], "photoKey": "凯里", "coverPhotoKey": "凯里"}, {"id": "journal-bed-car", "title": "一路向北", "subtitle": "第一次床车旅行 · 从黔东南干脆开回北京", "date": "", "endDate": "", "transport": "床车 / 跨省自驾", "note": "因为实在太想念长沙和贵州的味道，我们带着第一次布置好的床车又杀回来了。先在长沙老规矩吃足两天，再去凯里实现酸汤自由；哪怕在安顺遇上小剐蹭多耽搁了一天，也挡不住兴致——到了毕节干脆一拍即合：飞机不坐了，直接一路吃过重庆和西安，把车开回北京！", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "bed-changsha", "city": "长沙", "lon": 112.9388, "lat": 28.2282, "address": "长沙", "date": "", "image": "", "highlights": "先在长沙吃够两天老三样", "note": "去贵州之前必须先在长沙停两天。黑色经典、茶颜悦色、天宝兄弟，熟门熟路地把老三样挨个重温一遍，才算正式进入度假状态。", "photoKey": "长沙", "restaurantIds": ["food-changsha-heise", "food-changsha-chayan", "food-changsha-tianbao"]}, {"id": "bed-kaili", "city": "凯里", "lon": 107.9773, "lat": 26.5888, "address": "凯里", "date": "", "image": "", "highlights": "红酸吃鱼，白酸吃肉", "note": "在凯里先重温了日思夜想的牛滚荡白酸汤，又新解锁了苗阿哥红酸汤。苗阿哥锅里的黄鸭叫嫩到不可思议，入口即化。两顿吃下来，我们俩郑重总结出一条黔东南美食定理：红酸吃鱼，白酸吃肉。", "photoKey": "凯里", "restaurantIds": ["food-kaili-niugundang", "food-kaili-miaoge"]}, {"id": "bed-guiyang", "city": "贵阳", "lon": 106.6302, "lat": 26.647, "address": "贵阳", "date": "", "image": "", "highlights": "藏在山里的神奇咖啡之城", "note": "到了贵阳连喝了好几家特色咖啡。真没想到群山环抱的贵阳有这么多脑洞大开又好喝的独立咖啡馆。", "photoKey": "贵阳", "restaurantIds": ["food-guiyang-coffee"]}, {"id": "bed-huangguoshu", "city": "黄果树", "lon": 105.6662, "lat": 25.991, "address": "黄果树", "date": "", "image": "", "highlights": "水雾扑面的黄果树大瀑布", "note": "站在黄果树瀑布跟前，轰隆隆的水声混着漫天水雾扑面而来，亲眼看见的气势确实比照片里壮观太多。", "photoKey": "安顺黄果树"}, {"id": "bed-anshun", "city": "安顺", "lon": 105.9476, "lat": 26.2531, "address": "安顺", "date": "", "image": "", "highlights": "夜市牛小肠与计划外的滞留插曲", "note": "安顺夜市的炭烤牛小肠焦香弹牙，特别好吃。\n不过这一站也遇上了糟心事：车子发生了一点小剐蹭，为了去警察局处理、开证明，不得不在安顺多住一天，原本计划的织金洞也泡了汤。偏偏期间还和当地一位大哥、一位大妈起了冲突，闹得挺不愉快。虽然麻烦又窝火，但两个人一起扛过来的小插曲，现在翻出来也是旅途里最真实的一页。", "photoKey": "安顺夜市", "restaurantIds": ["food-anshun-nightmarket"]}, {"id": "bed-bijie", "city": "毕节", "lon": 105.2839, "lat": 27.3026, "address": "毕节", "date": "", "image": "", "highlights": "临时改主意：不飞了，直接开回北京", "note": "离开安顺开到毕节，两个人坐在车里一商量，做出了这趟最潇洒的决定：返程飞机干脆不坐了，直接一路向北把车开回北京！", "photoKey": "毕节"}, {"id": "bed-chongqing", "city": "重庆", "lon": 106.5516, "lat": 29.563, "address": "重庆", "date": "", "image": "", "highlights": "巴倒烫 · 南山上的露天火锅", "note": "北上第一站先扎进重庆吃火锅。最难忘的是南山上的巴倒烫，坐在山间露天院子里烫鹅肠和毛肚，晚风配红汤，香得不行。", "photoKey": "重庆", "restaurantIds": ["food-chongqing-badaotang", "food-chongqing-hotpot"]}, {"id": "bed-xian", "city": "西安", "lon": 108.9398, "lat": 34.3416, "address": "西安", "date": "", "image": "", "highlights": "一天连吃四顿的碳水狂欢", "note": "开到西安彻底放飞了胃口，一天结结实实吃够四顿：子午张记肉夹馍、凉皮、面片、臊子面轮番上阵，碳水带来的快乐简单又直接。", "photoKey": "西安", "restaurantIds": ["food-xian-roujiamo", "food-xian-liangpi", "food-xian-mianpian", "food-xian-saozi"]}, {"id": "bed-beijing", "city": "北京", "lon": 116.4074, "lat": 39.9042, "address": "北京", "date": "", "image": "", "highlights": "一千多公里，一路开回家", "note": "后半程几乎是一两天换一座城，伴着一路吃饱喝足的余味，稳稳当当地把床车开回了北京。", "photoKey": "北京"}], "photoKey": "重庆", "coverPhotoKey": "安顺黄果树"}, {"id": "journal-tibet", "title": "藏地来信", "subtitle": "滇藏线、阿里大环线与横跨中国的赛场", "date": "", "endDate": "", "transport": "滇藏进藏 / 阿里环线 / 羌塘线", "note": "从云南丽江出发，沿着滇藏线一路爬升进藏；在拉萨看过布达拉宫，又从日喀则扎进阿里大环线。高原上的「措」一个接着一个，有些烂路真的开到怀疑人生。最后从改则穿羌塘线出新疆民丰、和田，再直接横跨大半个中国赶去哈尔滨打信息安全竞赛——虽然没拿上奖，但这跨度想起来就让人想笑。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "tibet-lijiang", "city": "丽江", "lon": 100.233, "lat": 26.8721, "address": "丽江", "date": "", "image": "", "highlights": "滇藏线的起点", "note": "这趟漫长的进藏远征从云南丽江发车。收拾好行囊，我们顺着滇藏线一路往雪域高原深处开去。", "photoKey": "丽江"}, {"id": "tibet-lhasa", "city": "拉萨", "lon": 91.1409, "lat": 29.6456, "address": "拉萨", "date": "", "image": "", "highlights": "翻山越岭，抵达日光城", "note": "穿过一路高山峡谷，终于平平安安开进了拉萨。高原清冽透亮的阳光，让人一下子忘了长途跋涉的疲惫。", "photoKey": "拉萨"}, {"id": "tibet-potala", "city": "布达拉宫", "lon": 91.1174, "lat": 29.6578, "address": "布达拉宫", "date": "", "image": "", "highlights": "远远望见红白宫墙", "note": "在拉萨停下脚步，两个人远远望着阳光下的布达拉宫，心里有种「我们真的自己开到这里了」的踏实感。", "photoKey": "拉萨"}, {"id": "tibet-barkhor", "city": "八廓街", "lon": 91.1327, "lat": 29.6502, "address": "八廓街", "date": "", "image": "", "highlights": "顺着人流走过八廓街", "note": "跟着转经的人流在八廓街慢慢走，看街角的藏香、晒太阳的老人和被岁月磨得发亮的石板路。", "photoKey": "拉萨"}, {"id": "tibet-shigatse", "city": "日喀则", "lon": 88.8851, "lat": 29.2675, "address": "日喀则", "date": "", "image": "", "highlights": "阿里大环线，正式发车", "note": "从拉萨开抵日喀则。过了这里，真正考验人和车的阿里大环线就正式拉开帷幕了。", "photoKey": "日喀则"}, {"id": "tibet-yamdrok", "city": "羊湖", "lon": 90.6905, "lat": 28.936, "address": "羊湖", "date": "", "image": "", "highlights": "第一抹高原蓝 · 羊卓雍措", "note": "翻过山口看见羊湖的那一刻，湖水像一条蓝绿色的绸带铺在山谷间，开启了我们一路「一措再措」的看湖之旅。", "photoKey": "羊湖"}, {"id": "tibet-chongba", "city": "冲巴雍措", "lon": 89.586, "lat": 28.212, "address": "冲巴雍措", "date": "", "image": "", "highlights": "雪山脚下的翠色 · 冲巴雍措", "note": "藏在深山峡谷里的冲巴雍措，水色是那种安静又澄澈的宝石绿。", "photoKey": "冲巴雍措"}, {"id": "tibet-duoqing", "city": "多情错", "lon": 89.234, "lat": 28.153, "address": "多情错", "date": "", "image": "", "highlights": "雪峰倒映的多情错", "note": "名字特别浪漫的一片高原湖，隔着水岸能远远望见连绵的雪峰与云影。", "photoKey": "多情错"}, {"id": "tibet-pumo", "city": "普莫雍错", "lon": 90.4103, "lat": 28.5667, "address": "普莫雍错", "date": "", "image": "", "highlights": "离天空很近的普莫雍错", "note": "海拔五千多米的湖面辽阔得没有边际，风吹过的时候，天地间只剩下纯粹的蓝与白。", "photoKey": "普莫雍错"}, {"id": "tibet-jilong", "city": "吉隆口岸", "lon": 85.32, "lat": 28.217, "address": "吉隆口岸", "date": "", "image": "", "highlights": "喜马拉雅南麓的边境峡谷", "note": "一路下到吉隆口岸一带，海拔骤降，苍茫的高原忽然切换成了温润葱郁的峡谷风光。", "photoKey": "吉隆口岸"}, {"id": "tibet-viewpoint", "city": "亚洲一号观景台", "lon": 85.3, "lat": 28.5, "address": "亚洲一号观景台", "date": "", "image": "", "highlights": "在亚洲一号观景台俯瞰群峰", "note": "把车停在观景台高处，看脚下盘旋的山路与远处的雪峰云海同框。", "photoKey": "亚洲一号观景台", "locationNote": "观景台位于吉隆盘山路段，地图暂按吉隆区域近似标注。"}, {"id": "tibet-peiku", "city": "佩枯措", "lon": 85.59, "lat": 28.87, "address": "佩枯措", "date": "", "image": "", "highlights": "雪山与佩枯措同框", "note": "从吉隆折返北上，路过希夏邦马峰脚下的佩枯措，深蓝色的湖水像一面高原明镜。", "photoKey": "佩枯措"}, {"id": "tibet-zharinam", "city": "扎日南木错", "lon": 85.61, "lat": 30.95, "address": "扎日南木错", "date": "", "image": "", "highlights": "美人尖与开到崩溃的搓板路", "note": "专门冲着扎日南木错延伸进湖心的「美人尖」去的。弧形的沙堤深入碧蓝湖水，风景确实绝美，但通往那里的烂路也真是难开到了极点，一路颠得骨头都要散架了。", "photoKey": "扎日南木错", "locationNote": "地图标在扎日南木错湖区，美人尖那段伸进湖心的沙堤留作我们俩的驾驶勋章。"}, {"id": "tibet-wenbu", "city": "文布南村", "lon": 86.5, "lat": 31.35, "address": "文布南村", "date": "", "image": "", "highlights": "藏北湖畔的文布南村", "note": "在荒凉辽阔的藏北高原上开了好久，看到文布南村依山傍湖的石头房子时，久违地感受到了人间烟火气。", "photoKey": "文布南村当惹雍错"}, {"id": "tibet-tangra", "city": "当惹雍错", "lon": 86.6, "lat": 31.1, "address": "当惹雍错", "date": "", "image": "", "highlights": "文布南村窗外的当惹雍错", "note": "村子正对着苯教圣湖当惹雍错，傍晚风吹过湖面的时候，安静得像在与世隔绝的另一个星球。", "photoKey": "文布南村当惹雍错"}, {"id": "tibet-siling", "city": "色林错", "lon": 89, "lat": 31.83, "address": "色林错", "date": "", "image": "", "highlights": "辽阔如海的色林错", "note": "西藏最大的湖泊，车子沿着湖岸线开了很久很久，湛蓝的水面依然一眼望不到头。", "photoKey": "色林错"}, {"id": "tibet-dong", "city": "洞错", "lon": 85.9, "lat": 32.04, "address": "洞错", "date": "", "image": "", "highlights": "西行路上的洞错", "note": "往阿里腹地继续西行，路旁又撞见一片宁静辽阔的高原咸水湖。", "photoKey": "洞错"}, {"id": "tibet-wuma", "city": "物玛错", "lon": 85.16, "lat": 32.22, "address": "物玛错", "date": "", "image": "", "highlights": "旷野风声 · 物玛错", "note": "一措再措的阿里北线上，每一片湖都在阳光下呈现出不一样的蓝。", "photoKey": "物玛错"}, {"id": "tibet-gerze", "city": "改则", "lon": 84.0626, "lat": 32.3026, "address": "改则", "date": "", "image": "", "highlights": "阿里北线的改则驿站", "note": "一路风尘仆仆开到改则休整补给，准备迎接接下来穿出藏北旷野的羌塘线。", "photoKey": "改则"}, {"id": "tibet-qiangtang", "city": "羌塘", "lon": 84.0626, "lat": 32.3026, "address": "羌塘", "date": "", "image": "", "highlights": "穿越苍茫羌塘，向北出藏", "note": "从改则继续向北，走羌塘线一路奔向新疆民丰。无边无际的高原旷野里，只有我们俩和车轮一直往前。", "photoKey": "羌塘", "locationNote": "羌塘横跨藏北千里旷野，这里以改则北上入口作为路线段标记。"}, {"id": "tibet-minfeng", "city": "民丰", "lon": 82.6959, "lat": 37.0641, "address": "民丰", "date": "", "image": "", "highlights": "走出高原，抵达塔克拉玛干南缘", "note": "从高海拔的藏北一路下到新疆民丰，空气骤然温暖干燥，我们也从雪山圣湖开到了沙漠边缘。", "photoKey": "民丰"}, {"id": "tibet-hotan", "city": "和田", "lon": 79.9222, "lat": 37.1142, "address": "和田", "date": "", "image": "", "highlights": "西域歇脚，准备横跨中国", "note": "顺着昆仑山北麓到和田修整。谁能想到，刚从西藏和新疆的风沙里出来，下一站就要直奔东北。", "photoKey": "和田"}, {"id": "tibet-harbin", "city": "哈尔滨", "lon": 126.5349, "lat": 45.8038, "address": "哈尔滨", "date": "", "image": "", "highlights": "从西域飞奔东北的那场比赛", "note": "整趟远征最戏剧性的收尾：从和田一路赶到哈尔滨打信息安全竞赛。虽然最后没拿奖，哈哈，但刚在阿里颠完烂路就去东北打比赛的经历，这辈子大概也就这么一回了。", "photoKey": "哈尔滨"}], "photoKey": "羊湖", "routeContext": {"title": "丽江至拉萨 · 滇藏线途经小注", "text": "滇藏线从丽江北上，通常会一路经过香格里拉、德钦、芒康、左贡、八宿、波密与林芝，在芒康一带由 G214 并入 G318。这几处中途路过的节点还没来得及逐一对表，先记在眉批里，暂不混入上方已落笔的站点。", "cities": ["香格里拉", "德钦", "芒康", "左贡", "八宿", "波密", "林芝"], "source": "https://drc.xizang.gov.cn/zwgk_1941/fz/zx/201811/P020200909430608104977.pdf"}, "coverPhotoKey": "羊湖"}], "restaurants": [{"id": "food-beijing-kaifulaishe", "title": "开府莱舍 · 银泰店", "city": "北京", "branch": "银泰店", "address": "北京市朝阳区建国门外大街2号北京银泰中心in01 B1层B45-46号", "lon": 116.4522728, "lat": 39.9060793, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "海鲜意面 · 西餐简餐", "note": "国贸银泰地下的漂亮小馆子。想换换口味吃顿西餐、点盘海鲜意面的时候，就会想起这一餐的自在。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://www.amap.com/place/B0I275OBPB", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-banu", "title": "巴奴 · 悠唐店", "city": "北京", "branch": "悠唐店", "address": "北京市朝阳区三丰路悠唐购物中心4楼（夜市通道由北门东侧电梯直达）", "lon": 116.4331532, "lat": 39.9206149, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "毛肚火锅 · 野山菌汤", "note": "在北京馋毛肚火锅时的稳妥去处。七上八下涮好一片脆嫩毛肚，再盛一碗热乎乎的野山菌汤，什么疲惫都散了。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=fc546ba52c55ee05a3acc40b", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-michongshan", "title": "芈重山 · 通州店", "city": "北京", "branch": "通州店", "address": "北京市通州区翠景北里1号阳光新生活广场一层L139", "lon": 116.6497299, "lat": 39.8883609, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "重庆九宫格老火锅", "note": "在通州吃到的地道重庆重油老火锅。红汤一沸腾起来，满屋子都是让人食指大动的牛油香辣气。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=7f9923b529f0f81443e19295", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-xita", "title": "西塔老太太 · 北京路劲店", "city": "北京", "branch": "昌平店", "address": "北京市昌平区双营西路78号院2号楼3层301室", "lon": 116.2861046, "lat": 40.2057608, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "泥炉炭火烤肉 · 麻酱蘸料", "note": "炭火泥炉架起来，滋滋冒油的烤肉裹满灵魂麻酱和白糖醋汁，是我们俩每次吃烤肉都不会出错的快乐。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=c577ecf4913bd714902ca3be", "selectionBasis": "user-authorized-choice", "locationCandidates": [{"title": "西塔老太太泥炉烤肉(北京回龙观店)", "address": "北京市昌平区育知东路30号院5号楼四层F4-05", "lon": 116.330955, "lat": 40.0705443, "source": "https://map.baidu.com/?qt=s&wd=%E8%A5%BF%E5%A1%94%E8%80%81%E5%A4%AA%E5%A4%AA%E6%98%8C%E5%B9%B3%E5%8D%8E%E8%81%94%E5%BA%97&c=131&ie=utf-8&pn=0"}, {"title": "西塔老太太泥炉烤肉(北京路劲店)", "address": "北京市昌平区双营西路78号院2号楼3层301室", "lon": 116.2861046, "lat": 40.2057608, "source": "https://map.baidu.com/?qt=s&wd=%E8%A5%BF%E5%A1%94%E8%80%81%E5%A4%AA%E5%A4%AA%E5%8C%97%E4%BA%AC%E8%B7%AF%E5%8A%B2%E5%BA%97&c=131&ie=utf-8&pn=0"}]}, {"id": "food-beijing-kaojiang", "title": "烤匠 · 合生汇店", "city": "北京", "branch": "合生汇店", "address": "北京市朝阳区西大望路21号北京朝阳合生汇B1层21街区内", "lon": 116.4743852, "lat": 39.8929809, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "经典麻辣烤鱼 · 手工黑豆花", "note": "合生汇里热气腾腾的一顿烤鱼。外焦里嫩的鱼肉吸饱了麻辣汤汁，连锅里的黑豆花都能多炫好几口。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://www.amap.com/place/B0KRMS3O9G", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-eryu", "title": "洱语 · 大吉巷店", "city": "北京", "branch": "大吉巷店", "address": "北京市西城区骡马市大街20号院一区8幢LG1层南街（很久以前羊肉串旁）", "lon": 116.3697297, "lat": 39.8858034, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "云南铜锅风味 · 酸辣开胃", "note": "藏在大吉巷里的云南滋味。每次想念西南的酸辣鲜香、又暂时出不了远门的时候，来这里吃一桌就很慰藉。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=faf752d6082277dd13293575", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-niaotun", "title": "鸟屯 · 三里屯店", "city": "北京", "branch": "三里屯店", "address": "北京市朝阳区工体东路甲6号智胜快捷酒店一层", "lon": 116.4450182, "lat": 39.929673, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "炭火烧鸟 · 日式居酒屋", "note": "三里屯夜晚的小酒馆烟火。几串现烤得焦香多汁的鸡肉串端上来，最适合两个人慢悠悠地边吃边聊。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://www.amap.com/place/B000A9DK2J", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-xuxiaohei", "title": "徐小黑 · 沙河店", "city": "北京", "branch": "沙河店", "address": "北京市昌平区沙河镇路松街75号院5号楼2层201-1", "lon": 116.2749118, "lat": 40.1443539, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "浏阳蒸菜 · 猛火湘菜", "note": "在沙河日常解决嘴馋的宝藏湘菜馆。咸香够味、极其下饭，每次都能结结实实干掉两大碗米饭。", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=3ce8f9e303c32b3480a00c20", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-nanjing-dapaidang", "title": "南京大牌档 · 夫子庙平江府店", "city": "南京", "branch": "", "address": "南京市秦淮区大石坝街48号", "lon": 118.7874389, "lat": 32.022951, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "金陵小吃 · 秦淮风味", "note": "我们第一次出门旅行吃的第一顿正餐。花灯底下人声鼎沸，一桌子江南甜咸小吃，把属于我们俩的旅行食记正式翻开了第一页。", "revisit": false, "photoKey": "南京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": ["https://ditu.amap.com/place/B001917UUW", "https://touch.go.qunar.com/poi/6291218"], "selectionBasis": "user-authorized-choice", "locationCandidates": []}, {"id": "food-disney-duck", "title": "迪士尼的酸萝卜老鸭汤", "city": "上海", "branch": "", "address": "上海迪士尼乐园内（售卖点待确认）", "lon": 121.4737, "lat": 31.2304, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "酸萝卜老鸭汤", "note": "谁能想到去上海迪士尼玩，除了创极速光轮的推背感，最让我们念念不忘的竟然是园区里这碗酸爽滚烫的老鸭汤！", "revisit": true, "photoKey": "上海迪士尼", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.shanghaidisneyresort.com/zh-cn/information/about-dining", "https://note.com/kmciias/n/n3a7d0d1c838c", "https://travelnews.qunar.com/qa_strategy/shanghai-disney-food-guide-2"], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-quzhou-noodles", "title": "衢州那碗炒粉", "city": "衢州", "branch": "", "address": "", "lon": 118.8595, "lat": 28.9701, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "衢州猛火炒粉", "note": "第一次长途自驾路过衢州时吃到的街边炒粉，猛火快炒出来的锅气香得直钻鼻子。哪天想起来店名再补上。", "revisit": true, "photoKey": "衢州", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-quzhou-bbq", "title": "衢州那家新疆烧烤店", "city": "衢州", "branch": "", "address": "", "lon": 118.8595, "lat": 28.9701, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "现烤新疆烤馕", "note": "让我们俩惦记了一整路的传奇烤馕！刚出烤炉外脆里软、麦香混着孜然香，好吃到返程回上海时，我们真的专门绕道回衢州又去吃了一回。", "revisit": true, "photoKey": "衢州", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xiamen-duck", "title": "第一次吃姜母鸭", "city": "厦门", "branch": "", "address": "厦门市思明区中山路一带（门店待确认）", "lon": 118.0894, "lat": 24.4798, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "砂锅姜母鸭", "note": "在厦门解锁的人生第一顿姜母鸭。砂锅一揭开姜味扑面而来，对我俩来说实在太重太冲了，双双败下阵来，成了旅途里一桩好笑的味觉试错，哈哈。", "revisit": false, "photoKey": "厦门", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.amap.com/place/B0FFK1911U", "https://m.cncn.com/meishi/xiamen/food/3302"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "鑫坞堂海鲜热炒（中山路总店）", "address": "厦门市思明区镇邦路24号", "lon": 118.0713497, "lat": 24.4569042, "source": ["https://www.amap.com/place/B0FFK1911U"]}]}, {"id": "food-changsha-heise", "title": "黑色经典", "city": "长沙", "branch": "", "address": "", "lon": 112.9388, "lat": 28.2282, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "灌汁长沙臭豆腐", "note": "外焦里嫩、咬开爆汁的黑色经典，和茶颜悦色、天宝兄弟并列为我们俩的「长沙三巨头」。两次去长沙，走在街上总要先买一盒捧在手里。", "revisit": true, "photoKey": "长沙", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-changsha-chayan", "title": "茶颜悦色", "city": "长沙", "branch": "", "address": "", "lon": 112.9388, "lat": 28.2282, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "幽兰拿铁 · 碧根果奶油", "note": "我们的长沙老三样之一。在长沙街头走几百米就能遇见一家，挑开顶上的碧根果碎喝一口冰茶，就是长沙旅行的标准打开方式。", "revisit": true, "photoKey": "长沙", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.cyystea.com/home"], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-changsha-tianbao", "title": "天宝兄弟", "city": "长沙", "branch": "", "address": "", "lon": 112.9388, "lat": 28.2282, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "招牌口味虾 · 蒜蓉小龙虾", "note": "稳坐我们心头「长沙三巨头」的王牌。好吃到第二次准备去贵州床车自驾前，硬是先在长沙停了两天，专程把这一顿虾吃过瘾。", "revisit": true, "photoKey": "长沙", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.amap.com/place/B0HA2UQGLL", "https://hn.people.com.cn/n2/2026/0711/c356884-41636194.html"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "天宝兄弟（长沙汇景城店）", "address": "长沙市天心区白沙路汇景城B栋3层3017—3018号", "lon": 112.9646795, "lat": 28.1775577, "source": ["https://www.amap.com/place/B0HA2UQGLL"]}]}, {"id": "food-kaili-niugundang", "title": "牛滚荡", "city": "凯里", "branch": "", "address": "", "lon": 107.9773, "lat": 26.5888, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "凯里白酸汤火锅", "note": "我们俩心里的白酸汤白月光！第一次在长沙吃完临时起意杀去凯里，就是被这一锅酸爽鲜美的白酸汤彻底征服；第二次去贵州，第一件事就是直奔回来复刻这一口。", "revisit": true, "photoKey": "凯里", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.trip.com/restaurant/china/kaili/detail/niugundang-176170/", "https://sa.trip.com/restaurant/china/qiandongnan/detail/restaurant-77697753/"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "牛滚荡（金竹园分店）", "address": "凯里市友庄路12号金冠酒店附近", "lon": 107.9724835, "lat": 26.5706236, "source": ["https://www.trip.com/restaurant/china/kaili/detail/niugundang-176170/"]}, {"title": "牛滚荡（风情园店）", "address": "凯里市大十字街道友庄南路十二号大院对面", "lon": 107.9698688, "lat": 26.5658264, "source": ["https://sa.trip.com/restaurant/china/qiandongnan/detail/restaurant-77697753/"]}]}, {"id": "food-kaili-miaoge", "title": "苗阿哥", "city": "凯里", "branch": "", "address": "", "lon": 107.9773, "lat": 26.5888, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "红酸汤 · 鲜煮黄鸭叫", "note": "在凯里发现的另一大惊喜。红酸汤底里煮出来的黄鸭叫鱼肉滑嫩得不像话，也是吃完这一顿，我们俩正式立下了那句点菜真言：「红酸吃鱼，白酸吃肉。」", "revisit": true, "photoKey": "凯里", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.trip.com/restaurant/china/kaili/detail/restaurant-16291994/", "https://us.trip.com/restaurant/china/kaili/detail/restaurant-33642862/"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "苗阿哥酸汤牛肉火锅（体育场店）", "address": "凯里市迎宾大道凯里民族体育场南门东北侧", "lon": 107.9747959, "lat": 26.5692882, "source": ["https://www.trip.com/restaurant/china/kaili/detail/restaurant-16291994/"]}, {"title": "苗阿哥（国贸店）", "address": "凯里市永乐路国贸5楼（北京西路21号凯里国贸购物中心）", "lon": 107.9696165, "lat": 26.5842027, "source": ["https://us.trip.com/restaurant/china/kaili/detail/restaurant-33642862/"]}]}, {"id": "food-guiyang-coffee", "title": "贵阳的特色咖啡", "city": "贵阳", "branch": "", "address": "", "lon": 106.6302, "lat": 26.647, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "城市精品特调咖啡", "note": "在贵阳连喝了好几家独立咖啡馆。没想到这座山城藏着那么多有想法、风味又奇妙的特调咖啡，每一杯都像开盲盒一样有意思。", "revisit": false, "photoKey": "贵阳", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-anshun-nightmarket", "title": "安顺夜市", "city": "安顺", "branch": "", "address": "", "lon": 105.9476, "lat": 26.2531, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "炭火烤牛小肠", "note": "哪怕在安顺遇上了剐蹭的小插曲，安顺夜市的那一口烤牛小肠依然是无辜且惊艳的——炭火烤得焦香四溢，越嚼越香。", "revisit": true, "photoKey": "安顺", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-chongqing-badaotang", "title": "巴倒烫", "city": "重庆", "branch": "", "address": "", "lon": 106.5516, "lat": 29.563, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "南山露天火锅 · 鲜鹅肠 · 脆毛肚", "note": "从贵州一路开车回北京的路上，在重庆南山吃到的露天山景火锅。坐在山林晚风里烫着脆爽的鹅肠和毛肚，氛围和味道都拉满了。", "revisit": true, "photoKey": "重庆", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.amap.com/place/B00178X4W1"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "巴倒烫重庆陆派火锅（南山总店）", "address": "重庆市南岸区南山街道黄金公路巴倒烫火锅山庄", "lon": 106.5858441, "lat": 29.4993133, "source": ["https://www.amap.com/place/B00178X4W1"]}]}, {"id": "food-chongqing-hotpot", "title": "重庆吃过的其他火锅", "city": "重庆", "branch": "", "address": "", "lon": 106.5516, "lat": 29.563, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "山城街巷红汤火锅", "note": "在重庆那几天，除了南山上的巴倒烫，还顺着街巷吃了好几顿地道老火锅。红汤翻滚的牛油香气，是返程路上最踏实的慰藉。", "revisit": true, "photoKey": "重庆", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xian-roujiamo", "title": "子午张记肉夹馍", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "传统腊汁肉夹馍", "note": "西安「一天四顿」碳水狂欢的头牌。刚打出来的白吉馍酥脆掉渣，夹满肥而不腻、汁水丰盈的腊汁肉，一口下去满嘴生香。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://ditu.amap.com/place/B0FFGY55W3"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "子午路张记肉夹馍（子午路总店）", "address": "西安市雁塔区子午路十字东南角，东方大酒店正对面", "lon": 108.9347965, "lat": 34.2240582, "source": ["https://ditu.amap.com/place/B0FFGY55W3"]}]}, {"id": "food-xian-liangpi", "title": "西安的凉皮", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "油泼辣子秦镇凉皮", "note": "配着肉夹馍一起下肚的灵魂搭档。裹满红油辣子和醋香的凉皮爽滑筋道，三两口就能嗦完一盘。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xian-mianpian", "title": "西安的面片", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "关中手工面片", "note": "一天四顿碳水接力里的热乎一餐。手工揪出来的面片筋道滑溜，连面带汤吃下去浑身舒坦。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xian-saozi", "title": "西安的臊子面", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "岐山酸汤臊子面", "note": "酸辣鲜香、薄筋光汪的一碗臊子面。在西安一天塞进四顿面食还觉得意犹未尽，大概就是碳水之都的魔力。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}], "recipes": [{"id": "recipe-home-1", "title": "可乐鸡翅", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "鸡中翅 8–10 只\n可乐 1 听（不要无糖的，才好收出焦糖色）\n生姜 3 片、葱段少许\n料酒 1 勺、生抽 2 勺、老抽半勺", "steps": "鸡翅背面划两刀，冷水下锅加姜片和一勺料酒焯水，捞出沥干水分。\n锅里少许底油，把鸡翅煎到两面金黄微焦，油脂香全跑出来。\n淋入生抽、半勺老抽翻炒上色，倒入可乐没过鸡翅，中火咕嘟 12 分钟。\n最后转大火不停翻炒，看着汤汁一点点收成红亮粘稠的焦糖挂在鸡翅上，出锅！", "chef": "两人小灶", "minutes": "25", "note": "厨房里最不会出错的甜咸口拿手菜。可乐收汁到浓稠发亮、咕嘟冒泡的时候，满屋子都是让人幸福感飙升的焦糖肉香。", "photoKey": "可乐鸡翅", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-2", "title": "江西炒粉", "date": "", "category": "面饭", "image": "", "rating": 0, "ingredients": "江西干米粉 1 把\n瘦肉丝或鸡蛋、青菜一把、豆芽少许\n蒜末、小米辣、葱段\n生抽 2 勺、老抽 1 勺、蚝油 1 勺、辣椒粉少许", "steps": "江西干米粉先煮到七八分熟，捞出过两遍凉水沥干，加半勺老抽和少许熟油拌匀防粘。\n热锅宽油，下鸡蛋或肉丝滑熟，放蒜末和小米辣爆出辣香味。\n转最大火下米粉，用筷子和锅铲一起抖散翻炒，让每一根粉都吃进锅气。\n放青菜、豆芽和生抽蚝油快手翻匀，撒一把葱段起锅。", "chef": "两人小灶", "minutes": "15", "note": "在外面吃过那么多碗炒粉，回到家自己起锅猛火快炒一盘江西米粉，韧劲十足、酱香裹满每一根粉，最有深夜大排档的锅气。", "photoKey": "江西炒粉", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-3", "title": "拍黄瓜", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "脆黄瓜 2 根\n蒜瓣 4 颗（拍碎切末）\n小米辣 1–2 个、香菜少许\n生抽 1.5 勺、陈醋 2 勺、白糖半小勺、香油几滴", "steps": "黄瓜洗净垫在案板上，用刀背啪啪拍裂，再斜刀切成大块（拍出来的断面最吸汤汁）。\n加一点点盐抓匀静置两分钟，倒掉多余的水，这样吃起来格外清脆。\n放入蒜末、小米辣，淋上生抽、陈醋、白糖和几滴灵魂香油。\n拌匀装盘，夏天或者吃红烧硬菜时端上桌，一秒清口解腻。", "chef": "两人小灶", "minutes": "8", "note": "刀背啪地一拍，蒜末、香醋、生抽和几滴香油拌匀。夏天或者吃大菜的时候端上一盘，清脆爽口，一秒解腻。", "photoKey": "拍黄瓜", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-4", "title": "油焖大虾", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "鲜活大虾 1 斤\n姜丝、蒜末、葱段\n番茄酱 1 小勺（提色增鲜的小秘密）\n生抽 2 勺、料酒 1 勺、白糖 1 勺、清水小半碗", "steps": "大虾剪去虾须和虾枪，开背挑出虾线，用厨房纸吸干表面水分。\n锅里稍微多倒一点油，油热下大虾，用铲子轻轻按压虾头，煸出红亮诱人的虾油。\n拨到一边爆香姜蒜，加一勺料酒、两勺生抽、一勺白糖和一小勺番茄酱。\n添小半碗热水盖盖焖 3 分钟，开盖大火收浓汤汁，撒葱段出锅，连虾壳都想吮干净。", "chef": "两人小灶", "minutes": "20", "note": "大虾剪须开背，在热油里煎出红亮的虾油，再裹上甜鲜微酸的酱汁焖透。每次端上桌，连壳上的汁都要吮干净。", "photoKey": "油焖大虾", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-5", "title": "外婆红烧肉", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "精品五花肉 500g（选肥瘦相间三层肉）\n冰糖 15g、生姜 4 片、八角 1 颗、桂皮一小块\n料酒 2 勺、生抽 2 勺、老抽 1 勺、开水足量", "steps": "五花肉切麻将块，冷水下锅焯水后捞出，温水洗净沥干。\n锅里不放油或少油，下五花肉小火慢煎，把肥肉里的油脂逼出来一部分，盛出备用。\n就着底油下冰糖，小火炒出琥珀色的糖色，倒回五花肉迅速翻炒裹上亮红色。\n加姜片、八角、生抽、老抽，一定要冲入足量滚开水，小火慢炖 45 分钟，最后大火把汤汁收到浓油赤酱。", "chef": "两人小灶", "minutes": "60", "note": "考验耐心的慢火功夫菜。五花肉炖得红亮软糯、肥而不腻，汤汁往热米饭上一浇，谁都扛不住这口家常浓油赤酱。", "photoKey": "外婆红烧肉", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-6", "title": "糖醋排骨", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "猪肋排 500g\n姜片、葱结、熟白芝麻\n黄金糖醋汁：1 勺料酒、2 勺生抽、3 勺冰糖/白糖、4 勺香醋、5 勺清水（半勺老抽调色）", "steps": "肋排斩小段，冷水下锅加葱姜料酒焯水，捞出用温水洗净沥干。\n锅里少许油，下排骨中火慢煎到表面微焦金黄。\n倒入提前调好的「12345 黄金糖醋汁」，大火烧开后转小火盖盖焖炖 30 分钟。\n开盖转大火不停翻炒收汁，等糖醋汁变成琥珀色紧紧包裹住每一块排骨，撒一把白芝麻上桌。", "chef": "两人小灶", "minutes": "45", "note": "酸甜比例拿捏得刚刚好的一道硬菜。排骨收汁后亮晶晶地裹着琥珀色的糖醋汁，咬一口外酥里嫩，百吃不厌。", "photoKey": "糖醋排骨", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-7", "title": "鸡汤", "date": "", "category": "汤羹", "image": "", "rating": 0, "ingredients": "土鸡或老母鸡半只\n老姜 1 块（拍松）、大葱 2 段\n红枣 4 颗、枸杞一小撮\n盐适量、白胡椒粉少许", "steps": "鸡肉斩块，冷水下锅加姜片焯去血沫，捞出一定要用温水冲洗干净。\n把鸡块和拍松的老姜、葱段、红枣一起放进砂锅，一次性添足开水。\n大火烧滚后转最小火，盖上砂锅盖慢火咕嘟一个多小时，满屋子都是鲜香味。\n关火前 10 分钟撒入枸杞和适量盐，喝的时候按喜好撒一点点白胡椒粉，从胃里一直暖到指尖。", "chef": "两人小灶", "minutes": "90", "note": "砂锅慢火咕嘟出来的一锅金黄鸡汤。不加花哨的调料，只靠时间和食材本身的鲜甜，喝下一碗从胃里暖到指尖。", "photoKey": "鸡汤", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-8", "title": "西红柿鸡蛋", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "熟透软汁的西红柿 2 个\n鸡蛋 3–4 颗、小葱花\n盐适量、白糖半勺（中和酸味）、番茄酱半勺（选加）", "steps": "鸡蛋打进碗里，加一点点盐和几滴清水搅打均匀（加几滴水炒出来的鸡蛋格外蓬松软嫩）。\n西红柿顶部划十字烫去外皮，一半切小丁方便出沙，一半切块保留口感。\n热锅宽油，油冒青烟时倒入蛋液，蓬起后快速划散成大块盛出。\n下西红柿丁炒出浓郁的红沙汤汁，倒回鸡蛋和西红柿块，加盐和半勺白糖大火翻匀，撒葱花连汤带菜浇饭绝了。", "chef": "两人小灶", "minutes": "10", "note": "家常菜里永远的压舱石。蓬松吸汁的鸡蛋裹着酸甜浓稠的番茄沙司，不管做多少次，拌进米饭里都是最踏实的家的味道。", "photoKey": "西红柿鸡蛋", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-9", "title": "虎皮尖椒", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "薄皮青椒 6–8 根（选皮薄肉厚、微辣的螺丝椒或羊角椒）\n大蒜 4 瓣（切碎末）\n碗汁：生抽 2 勺、香醋 1 勺、蚝油半勺、白糖半勺、清水 2 勺", "steps": "青椒洗净去蒂，用刀背轻轻拍扁。\n锅烧热先不放油，把青椒放进去用锅铲一边按压一边干焙，直到两面起皱、贴出焦黄的虎皮斑纹。\n淋入一圈食用油，拨开中心下蒜末爆出香味。\n顺锅边淋入调好的糖醋豉油碗汁，大火咕嘟半分钟让青椒吸饱汤汁，超级下饭。", "chef": "两人小灶", "minutes": "12", "note": "青椒在锅里贴出焦香的虎皮斑纹，再浇进蒜末豉油汁收味。微辣带甜、软糯多汁，是餐桌上隐藏的米饭杀手。", "photoKey": "虎皮尖椒", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-10", "title": "辣椒炒肉", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "梅花肉或前腿肉 250g（带一点肥肉）\n螺丝椒 4–5 根、拍蒜 4 瓣、豆豉几粒\n生抽 2 勺、老抽半勺、蚝油半勺、盐少许", "steps": "肥肉和瘦肉分开切片；瘦肉加半勺生抽、半勺老抽和少许食用油抓匀锁水；螺丝椒滚刀切块。\n热锅少油，先下青椒加一点点盐煸炒到表皮微虎皮状，盛出备用（这样青椒才脆嫩入味）。\n锅里下肥肉片和拍蒜、豆豉煸出猪油渣香，转最大火下腌好的瘦肉片快速滑散。\n倒回青椒，顺锅边烹入一勺生抽和蚝油，大火翻炒十几秒立刻出锅。", "chef": "两人小灶", "minutes": "15", "note": "猛火快炒的湘味魂。五花或前腿肉煸出油脂香，再和青椒一起大火翻炒入味，鲜辣过瘾，专治各种没胃口。", "photoKey": "辣椒炒肉", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-11", "title": "西红柿面", "date": "", "category": "面饭", "image": "", "rating": 0, "ingredients": "手擀面或挂面 2 人份\n西红柿 2 个、鸡蛋 2 颗\n小青菜几棵、葱花\n生抽 1.5 勺、盐、香油几滴", "steps": "西红柿去皮切小块；锅里热油先炒香两个蓬松的鸡蛋，盛出或直接拨到锅边。\n下西红柿块加少许盐，用铲子按压炒出浓郁红汤，冲入两大碗开水烧滚。\n下入面条煮至八九分熟，放进炒好的鸡蛋和几棵小青菜，加生抽调味。\n关火前撒一把葱花、滴几滴香油，连汤带面端上桌，呼噜噜吃完整个人都舒坦了。", "chef": "两人小灶", "minutes": "12", "note": "不想大动干戈又想吃口热乎的时候，最治愈的就是这一碗西红柿鸡蛋汤面。浓汤裹着面条，呼噜噜连汤带面吃个精光。", "photoKey": "西红柿面", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-12", "title": "老奶洋芋", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "黄心土豆 2 个（选淀粉含量高、容易起沙的）\n小葱一大把（灵魂所在）、蒜末少许\n干辣椒面或火腿丁（按当天口味加）、盐、花椒粉少许", "steps": "黄心土豆去皮切大块，上锅蒸熟或水煮到筷子一戳就透，捞出趁热用勺子压成粗颗粒状的土豆泥。\n锅里稍微多放一点油，下蒜末和干辣椒面（或细火腿丁）小火炒出红油香气。\n倒入土豆泥，用锅铲耐心地翻炒按压，让土豆泥吸饱油脂，底部煎出一点点金黄焦壳。\n撒上盐、一点点花椒粉和一大把翠绿的小葱花翻匀，绵密焦香，每一口都是西南带回来的快乐。", "chef": "两人小灶", "minutes": "25", "note": "从西南带回餐桌的心头好。煮得绵密起沙的土豆捣成泥，混着葱花在锅里炒得焦香软糯，每一口都是扎实又温柔的满足。", "photoKey": "老奶洋芋", "updatedAt": "2026-11-10T00:00:00.000Z"}], "letters": [{"id": "letter-since-0915", "title": "写给二十一岁的丸子 · 九月十五以后", "date": "2026-11-22", "voice": "", "updatedAt": "2026-11-10T00:00:00.000Z", "body": "丸子：\n\n把这本小画册从头到尾翻了一遍，才发现从九月十五那天到现在，我们俩不知不觉已经一起走过了这么多地方。\n\n最开始在南京的时候，我们还没有那么长的自驾路线，只是在城里吃大牌档、去鸡鸣寺和先锋书店，到了晚上就并排骑车吹风。那时候大概也没想到，后来我们会握着方向盘越开越远——会凌晨五点摸黑爬铜锣山，在厚厚的大雾里等一场没露面的日出；会在漳州开错路撞见安静的野生土楼；会为了再吃一口新疆烤馕，在回上海的路上专门绕回衢州；也会在泉州西街第一次一起戴上好看的簪花。\n\n再往后，我们的路线就经常被馋虫带着跑了。在长沙吃出了雷打不动的「三大巨头」，临时起意一脚油门开去凯里，被牛滚荡的白酸汤和苗阿哥的黄鸭叫彻底征服，还煞有介事地总结出「红酸吃鱼，白酸吃肉」的定理；在黔东南赶集，你挑中了喜欢的簪子，我淘到了那本六七十年代的贵州草药老书。哪怕在安顺遇上剐蹭多耽搁了一天，到了毕节我们还是能一拍即合：飞机不坐了，干脆睡着床车、吃着重庆南山的露天火锅和西安一天四顿的面食，一路把车开回北京。\n\n再到从丽江走滇藏线进藏，绕着阿里大环线一个湖接着一个湖看过去，在扎日南木错美人尖的烂路上颠到怀疑人生，穿过苍茫的羌塘到新疆民丰、和田，最后横跨大半个中国赶去哈尔滨打完那场没拿奖也想笑的比赛。\n\n有时候觉得，最好的旅行从来不是按部就班的攻略，而是不管开错哪条路、临时改什么主意，转头看副驾的时候，你都在旁边。\n\n二十一岁生日快乐，我的丸子。愿你永远有说走就走的兴致，有吃遍山海的好胃口。往后的日子还长，不管是家里小灶的下一道菜，还是地图上的下一条长路，我们继续慢慢一起走。"}], "plans": [{"id": "plan-done-quzhou-naan", "title": "为了那口新疆烤馕，返程专门绕回衢州再吃一顿", "note": "第一次长途自驾路过衢州时被那家新疆烧烤店的烤馕惊艳，回上海的后半程真的说到做到，专门绕道杀回衢州又吃了一回。", "date": "", "done": true, "completedDate": "江南入海 · 返程已兑现", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-quanzhou-zanhua", "title": "在泉州西街第一次一起簪花", "note": "在热闹鲜活的西街一起戴上了花团锦簇的簪花围，镜头里定格的样子特别好看。", "date": "", "done": true, "completedDate": "江南入海 · 泉州西街", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-bedcar-north", "title": "布置好床车，来一场不按剧本走的长途自驾", "note": "不仅睡进了第一次折腾好的床车，还在毕节临时改主意放弃坐飞机，一路吃过重庆和西安把车开回了北京。", "date": "", "done": true, "completedDate": "一路向北 · 床车自驾", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-tibet-lakes", "title": "自驾走完滇藏线与阿里大环线，看遍高原的「措」", "note": "从丽江到拉萨，再从日喀则开启阿里大环线，羊湖、扎日南木错、当惹雍错、色林错一路看过来，连美人尖最难开的烂路都一起闯过去了。", "date": "", "done": true, "completedDate": "藏地来信 · 阿里与羌塘", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-pending-zhijindong", "title": "补上那趟在安顺错过的织金洞", "note": "上次床车旅行在安顺因为处理小剐蹭多滞留了一天，原本计划的织金洞没去成。留给下一次去贵州喝酸汤的时候一起补上。", "date": "", "done": false, "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-pending-xiapu-sunset", "title": "在霞浦待够一整天，不赶时间看一次完整的海边日落", "note": "上次江南入海路过霞浦因为赶路只匆匆停留了一个小时，下次专门留个周末给闽东的滩涂和海风。", "date": "", "done": false, "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-pending-kitchen-menu", "title": "给两人的家常小灶再解锁几道拿手新菜", "note": "可乐鸡翅、外婆红烧肉和老奶洋芋都已经很稳了，下次试试在家里复刻一锅凯里酸汤或者新的硬菜。", "date": "", "done": false, "updatedAt": "2026-11-10T00:00:00.000Z"}]};
+const JOURNAL_CONTENT = {"version": 1, "trips": [{"id": "journal-nanjing", "title": "金陵晚风", "subtitle": "第一次出发 · 南京", "date": "", "endDate": "", "transport": "城市漫步 / 夜骑", "note": "我们的第一场旅行就在南京。吃南京大排档，逛寺庙、博物院和书店，到了晚上再一起骑车。那时还没有后面那么长的自驾路线，就在一座城里慢慢玩。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "nj-food", "city": "南京", "lon": 118.7969, "lat": 32.0603, "address": "南京", "date": "", "image": "", "highlights": "南京大排档", "note": "第一趟旅行，我们在南京吃了南京大排档。", "photoKey": "南京大排档", "restaurantIds": ["food-nanjing-dapaidang"]}, {"id": "nj-temple", "city": "鸡鸣寺", "lon": 118.7902, "lat": 32.0623, "address": "鸡鸣寺", "date": "", "image": "", "highlights": "一起去鸡鸣寺", "note": "", "photoKey": "鸡鸣寺"}, {"id": "nj-avenue", "city": "梧桐大道", "lon": 118.8365, "lat": 32.0526, "address": "梧桐大道", "date": "", "image": "", "highlights": "梧桐大道", "note": "", "photoKey": "梧桐大道", "locationNote": "地图按南京梧桐大道常见区域近似标注，具体走过的路段待补充。"}, {"id": "nj-museum", "city": "南京博物院", "lon": 118.8225, "lat": 32.0399, "address": "南京博物院", "date": "", "image": "", "highlights": "逛博物院", "note": "", "photoKey": "南京博物院"}, {"id": "nj-bookstore", "city": "先锋书店", "lon": 118.7969, "lat": 32.0603, "address": "先锋书店", "date": "", "image": "", "highlights": "先锋书店", "note": "", "photoKey": "先锋书店", "locationNote": "具体分店待补充，地图暂按南京市区近似标注。"}, {"id": "nj-night", "city": "南京", "lon": 118.7969, "lat": 32.0603, "address": "南京", "date": "", "image": "", "highlights": "晚上一起骑车", "note": "晚上还一起骑了车。", "photoKey": "南京"}], "photoKey": "南京", "coverPhotoKey": "梧桐大道"}, {"id": "journal-east-coast", "title": "江南入海", "subtitle": "第一次长途自驾 · 江浙皖闽", "date": "", "endDate": "", "transport": "长途自驾", "note": "先在上海看新国辩、玩迪士尼，然后开始了我们的第一次长途自驾。一路往南，经过江浙、安徽和福建。会因为走错路看到好风景，也会为了再吃一口烤馕，专门绕回衢州。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "east-shanghai", "city": "上海", "lon": 121.4737, "lat": 31.2304, "address": "上海", "date": "", "image": "", "highlights": "新国辩", "note": "这一趟从上海开始，我们先去看了新国辩。", "photoKey": "上海"}, {"id": "east-disney", "city": "上海迪士尼", "lon": 121.657, "lat": 31.1434, "address": "上海迪士尼", "date": "", "image": "", "highlights": "创极速光轮 / 酸萝卜老鸭汤", "note": "创极速光轮非常好玩，酸萝卜老鸭汤也特别好吃。", "photoKey": "上海迪士尼", "restaurantIds": ["food-disney-duck"]}, {"id": "east-shaoxing", "city": "绍兴", "lon": 120.5802, "lat": 30.0024, "address": "绍兴", "date": "", "image": "", "highlights": "鲁迅故里", "note": "离开上海以后，我们开车到了绍兴，去了鲁迅故里。", "photoKey": "绍兴鲁迅故里"}, {"id": "east-wuzhen", "city": "乌镇", "lon": 120.4876, "lat": 30.7433, "address": "乌镇", "date": "", "image": "", "highlights": "嘉兴 · 乌镇", "note": "", "photoKey": "乌镇"}, {"id": "east-hangzhou", "city": "杭州", "lon": 120.1551, "lat": 30.2741, "address": "杭州", "date": "", "image": "", "highlights": "开车到杭州", "note": "", "photoKey": "杭州"}, {"id": "east-quzhou", "city": "衢州", "lon": 118.8595, "lat": 28.9701, "address": "衢州", "date": "", "image": "", "highlights": "炒粉 / 新疆烧烤店的烤馕", "note": "衢州的炒粉特别香，还有一家新疆烧烤店，烤馕好吃得让我们一直惦记。后来为了再吃一次，我们真的专门绕回了衢州。", "photoKey": "衢州烤馕", "restaurantIds": ["food-quzhou-noodles", "food-quzhou-bbq"]}, {"id": "east-mountain", "city": "铜锣山", "lon": 118.8595, "lat": 28.9701, "address": "铜锣山", "date": "", "image": "", "highlights": "清晨五点上山", "note": "清晨五点上山，起初一路只有我们俩，旁边还有一些土墓，确实有点惊险刺激。云雾太大，最后没看到日出，但这趟山还是特别难忘。", "photoKey": "铜锣山", "locationNote": "山名沿用我们的记录，具体地点待核对；地图暂放在衢州区域，不表示山的精确位置。"}, {"id": "east-huangshan", "city": "黄山", "lon": 118.3375, "lat": 29.7147, "address": "黄山", "date": "", "image": "", "highlights": "古徽派建筑", "note": "到了安徽黄山市，看古老的徽派建筑。", "photoKey": "黄山徽派村落"}, {"id": "east-zhangzhou", "city": "漳州", "lon": 117.6471, "lat": 24.513, "address": "漳州", "date": "", "image": "", "highlights": "野生土楼 / 走错路的意外收获", "note": "我们找到了野生土楼。还因为走错路，发现了一条特别美的乡间小路和很多古老的村子。这次走错路，反而成了很喜欢的一段。", "photoKey": "漳州土楼云水谣"}, {"id": "east-yunshuiyao", "city": "云水谣", "lon": 117.0956, "lat": 24.6584, "address": "云水谣", "date": "", "image": "", "highlights": "云水谣", "note": "", "photoKey": "漳州土楼云水谣"}, {"id": "east-xiamen", "city": "厦门", "lon": 118.0894, "lat": 24.4798, "address": "厦门", "date": "", "image": "", "highlights": "晚上海边散步 / 第一次吃姜母鸭", "note": "晚上一起在海边散步。也是在厦门，我们第一次吃姜母鸭——姜味太重了，实在吃不惯，哈哈。", "photoKey": "厦门", "restaurantIds": ["food-xiamen-duck"]}, {"id": "east-quanzhou", "city": "泉州", "lon": 118.6759, "lat": 24.8741, "address": "泉州", "date": "", "image": "", "highlights": "西街 / 第一次一起簪花", "note": "在西街第一次一起簪花，真的很好看。", "photoKey": "泉州西街"}, {"id": "east-fuzhou", "city": "福州", "lon": 119.2965, "lat": 26.0745, "address": "福州", "date": "", "image": "", "highlights": "福州这一站", "note": "", "photoKey": "福州"}, {"id": "east-xiapu", "city": "霞浦", "lon": 120.0056, "lat": 26.8852, "address": "霞浦", "date": "", "image": "", "highlights": "匆匆停留一个小时", "note": "因为赶时间，在霞浦只待了一个小时。", "photoKey": "霞浦"}, {"id": "east-quzhou-return", "city": "衢州", "lon": 118.8595, "lat": 28.9701, "address": "衢州", "date": "", "image": "", "highlights": "为了烤馕，专门绕回来", "note": "还没吃够那家新疆烧烤店的烤馕。于是旅程后面，我们专门奔波绕到衢州，再吃一次。", "photoKey": "衢州", "restaurantIds": ["food-quzhou-bbq"]}, {"id": "east-qiyuan", "city": "嘉兴绮园", "lon": 120.9495, "lat": 30.5224, "address": "嘉兴绮园", "date": "", "image": "", "highlights": "返程前逛绮园", "note": "回上海之前，我们又去了嘉兴绮园。", "photoKey": "嘉兴绮园"}, {"id": "east-shanghai-return", "city": "上海", "lon": 121.4737, "lat": 31.2304, "address": "上海", "date": "", "image": "", "highlights": "回到上海，从这里返程", "note": "这一大圈最后又回到上海，再从上海返程。", "photoKey": "上海"}], "photoKey": "乌镇", "coverPhotoKey": "乌镇"}, {"id": "journal-changsha-kaili", "title": "湘黔寻味", "subtitle": "长沙与凯里 · 吃出来的新路线", "date": "", "endDate": "", "transport": "自驾", "note": "这趟主要就是吃。长沙的黑色经典、茶颜悦色和天宝兄弟，成了我们的三大巨头。后来临时决定开去贵州凯里，一锅白酸汤，又给下一次旅行找好了理由。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "taste-changsha", "city": "长沙", "lon": 112.9388, "lat": 28.2282, "address": "长沙", "date": "", "image": "", "highlights": "黑色经典 / 茶颜悦色 / 天宝兄弟", "note": "在长沙吃了很多黑色经典、茶颜悦色和天宝兄弟。这三家就是我们的最爱。", "photoKey": "长沙", "restaurantIds": ["food-changsha-heise", "food-changsha-chayan", "food-changsha-tianbao"]}, {"id": "taste-kaili", "city": "凯里", "lon": 107.9773, "lat": 26.5888, "address": "凯里", "date": "", "image": "", "highlights": "牛滚荡 · 白酸汤", "note": "旅途中突发奇想，开到了贵州凯里。牛滚荡的白酸汤特别特别好吃，直接成了白月光。后来第二次来贵州，又回来吃了。", "photoKey": "凯里", "restaurantIds": ["food-kaili-niugundang"]}, {"id": "taste-market", "city": "黔东南赶集", "lon": 107.9773, "lat": 26.5888, "address": "黔东南赶集", "date": "", "image": "", "highlights": "丸子的簪子 / 贵州草药古书", "note": "赶集淘到了不少有意思的老物件。丸子特别喜欢一个簪子，我很喜欢一本讲贵州草药的古书，是上世纪六七十年代编纂的。", "photoKey": "凯里", "locationNote": "具体集市名称待补充，暂以凯里市区代表这段黔东南赶集回忆。"}], "photoKey": "凯里", "coverPhotoKey": "凯里"}, {"id": "journal-bed-car", "title": "一路向北", "subtitle": "第一次床车旅行 · 贵州出发，最后开回了家", "date": "", "endDate": "", "transport": "床车 / 长途自驾", "note": "长沙和贵州实在太好吃了，我们又来了。这次还是第一次床车旅行：先在长沙吃两天，再去贵州。后来又临时决定不坐飞机了，干脆一路开回北京，顺路继续吃重庆和西安。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "bed-changsha", "city": "长沙", "lon": 112.9388, "lat": 28.2282, "address": "长沙", "date": "", "image": "", "highlights": "先吃两天，还是老三样", "note": "这次先在长沙吃了两天。黑色经典、茶颜悦色、天宝兄弟，还是那熟悉的老三样。", "photoKey": "长沙", "restaurantIds": ["food-changsha-heise", "food-changsha-chayan", "food-changsha-tianbao"]}, {"id": "bed-kaili", "city": "凯里", "lon": 107.9773, "lat": 26.5888, "address": "凯里", "date": "", "image": "", "highlights": "牛滚荡白酸汤 / 苗阿哥红酸汤", "note": "先吃心心念念的牛滚荡白酸汤，又发现了苗阿哥红酸汤。苗阿哥的黄鸭叫特别好吃，鱼肉超级嫩。我们就此总结：红酸吃鱼，白酸吃肉。", "photoKey": "凯里", "restaurantIds": ["food-kaili-niugundang", "food-kaili-miaoge"]}, {"id": "bed-guiyang", "city": "贵阳", "lon": 106.6302, "lat": 26.647, "address": "贵阳", "date": "", "image": "", "highlights": "几家很有意思的特色咖啡", "note": "在贵阳喝了好几家特色咖啡。这里真的有很多神奇的咖啡。", "photoKey": "贵阳", "restaurantIds": ["food-guiyang-coffee"]}, {"id": "bed-huangguoshu", "city": "黄果树", "lon": 105.6662, "lat": 25.991, "address": "黄果树", "date": "", "image": "", "highlights": "黄果树瀑布", "note": "黄果树确实很壮观。", "photoKey": "安顺黄果树"}, {"id": "bed-anshun", "city": "安顺", "lon": 105.9476, "lat": 26.2531, "address": "安顺", "date": "", "image": "", "highlights": "夜市牛小肠 / 计划外多留一天", "note": "安顺夜市很好吃，尤其是牛小肠。\n不过在安顺发生了一次剐蹭，我们得去警察局处理、开证明，不得不多住一天，后面的织金洞也没去成。期间还和当地一位大哥、一位大妈有些冲突，闹了不愉快。这件事挺麻烦的，到现在还记得。", "photoKey": "安顺夜市", "restaurantIds": ["food-anshun-nightmarket"]}, {"id": "bed-bijie", "city": "毕节", "lon": 105.2839, "lat": 27.3026, "address": "毕节", "date": "", "image": "", "highlights": "离开安顺，去毕节", "note": "离开安顺之后到了毕节。后来我们临时改了返程计划：不坐飞机了，直接开回北京。", "photoKey": "毕节"}, {"id": "bed-chongqing", "city": "重庆", "lon": 106.5516, "lat": 29.563, "address": "重庆", "date": "", "image": "", "highlights": "巴倒烫 · 山上的室外火锅", "note": "重庆又吃了不少好吃的火锅。最有印象的是巴倒烫，坐在山上室外吃火锅，鹅肠和毛肚特别香。", "photoKey": "重庆", "restaurantIds": ["food-chongqing-badaotang", "food-chongqing-hotpot"]}, {"id": "bed-xian", "city": "西安", "lon": 108.9398, "lat": 34.3416, "address": "西安", "date": "", "image": "", "highlights": "一天四顿", "note": "到了西安，一天吃四顿。子午张记肉夹馍、凉皮、面片、臊子面，都很好吃。", "photoKey": "西安", "restaurantIds": ["food-xian-roujiamo", "food-xian-liangpi", "food-xian-mianpian", "food-xian-saozi"]}, {"id": "bed-beijing", "city": "北京", "lon": 116.4074, "lat": 39.9042, "address": "北京", "date": "", "image": "", "highlights": "一路开回北京", "note": "后面这几天基本是一两天一座城市，最后就这样开回了北京。", "photoKey": "北京"}], "photoKey": "重庆", "coverPhotoKey": "安顺黄果树"}, {"id": "journal-tibet", "title": "藏地来信", "subtitle": "滇藏线、阿里与最后一场比赛", "date": "", "endDate": "", "transport": "自驾进藏 / 阿里环线 / 羌塘线", "note": "从云南丽江出发，走滇藏线进藏。到了拉萨，再去日喀则，开始这趟阿里大环线。湖一个接一个，有些路确实难开。后来从羌塘到民丰、和田，又赶到哈尔滨打信息安全竞赛，虽然最后没拿奖，哈哈。", "updatedAt": "2026-11-10T00:00:00.000Z", "stops": [{"id": "tibet-lijiang", "city": "丽江", "lon": 100.233, "lat": 26.8721, "address": "丽江", "date": "", "image": "", "highlights": "从这里出发，走滇藏线", "note": "这趟自驾从云南丽江开始，我们沿滇藏线进藏。", "photoKey": "丽江"}, {"id": "tibet-lhasa", "city": "拉萨", "lon": 91.1409, "lat": 29.6456, "address": "拉萨", "date": "", "image": "", "highlights": "抵达拉萨", "note": "", "photoKey": "拉萨"}, {"id": "tibet-potala", "city": "布达拉宫", "lon": 91.1174, "lat": 29.6578, "address": "布达拉宫", "date": "", "image": "", "highlights": "远远看布达拉宫", "note": "到了拉萨，我们远远看了布达拉宫。", "photoKey": "拉萨"}, {"id": "tibet-barkhor", "city": "八廓街", "lon": 91.1327, "lat": 29.6502, "address": "八廓街", "date": "", "image": "", "highlights": "逛八廓街", "note": "", "photoKey": "拉萨"}, {"id": "tibet-shigatse", "city": "日喀则", "lon": 88.8851, "lat": 29.2675, "address": "日喀则", "date": "", "image": "", "highlights": "阿里大环线从这里开始", "note": "从拉萨到日喀则，我们的阿里大环线正式开始。", "photoKey": "日喀则"}, {"id": "tibet-yamdrok", "city": "羊湖", "lon": 90.6905, "lat": 28.936, "address": "羊湖", "date": "", "image": "", "highlights": "羊卓雍措", "note": "", "photoKey": "羊湖"}, {"id": "tibet-chongba", "city": "冲巴雍措", "lon": 89.586, "lat": 28.212, "address": "冲巴雍措", "date": "", "image": "", "highlights": "冲巴雍措", "note": "", "photoKey": "冲巴雍措"}, {"id": "tibet-duoqing", "city": "多情错", "lon": 89.234, "lat": 28.153, "address": "多情错", "date": "", "image": "", "highlights": "多情错", "note": "", "photoKey": "多情错"}, {"id": "tibet-pumo", "city": "普莫雍错", "lon": 90.4103, "lat": 28.5667, "address": "普莫雍错", "date": "", "image": "", "highlights": "普莫雍错", "note": "", "photoKey": "普莫雍错"}, {"id": "tibet-jilong", "city": "吉隆口岸", "lon": 85.32, "lat": 28.217, "address": "吉隆口岸", "date": "", "image": "", "highlights": "吉隆口岸", "note": "", "photoKey": "吉隆口岸"}, {"id": "tibet-viewpoint", "city": "亚洲一号观景台", "lon": 85.3, "lat": 28.5, "address": "亚洲一号观景台", "date": "", "image": "", "highlights": "亚洲一号观景台", "note": "", "photoKey": "亚洲一号观景台", "locationNote": "观景台精确位置待确认，暂以吉隆区域近似标注。"}, {"id": "tibet-peiku", "city": "佩枯措", "lon": 85.59, "lat": 28.87, "address": "佩枯措", "date": "", "image": "", "highlights": "佩枯措", "note": "", "photoKey": "佩枯措"}, {"id": "tibet-zharinam", "city": "扎日南木错", "lon": 85.61, "lat": 30.95, "address": "扎日南木错", "date": "", "image": "", "highlights": "美人尖 / 很难开的路", "note": "去了扎日南木错美人尖，这里的路真的很难开。", "photoKey": "扎日南木错", "locationNote": "地图按湖区近似标注，美人尖具体停留位置待补充。"}, {"id": "tibet-wenbu", "city": "文布南村", "lon": 86.5, "lat": 31.35, "address": "文布南村", "date": "", "image": "", "highlights": "文布南村", "note": "", "photoKey": "文布南村当惹雍错"}, {"id": "tibet-tangra", "city": "当惹雍错", "lon": 86.6, "lat": 31.1, "address": "当惹雍错", "date": "", "image": "", "highlights": "文布南村旁的当惹雍错", "note": "", "photoKey": "文布南村当惹雍错"}, {"id": "tibet-siling", "city": "色林错", "lon": 89, "lat": 31.83, "address": "色林错", "date": "", "image": "", "highlights": "色林错", "note": "", "photoKey": "色林错"}, {"id": "tibet-dong", "city": "洞错", "lon": 85.9, "lat": 32.04, "address": "洞错", "date": "", "image": "", "highlights": "洞错", "note": "", "photoKey": "洞错"}, {"id": "tibet-wuma", "city": "物玛错", "lon": 85.16, "lat": 32.22, "address": "物玛错", "date": "", "image": "", "highlights": "物玛错", "note": "", "photoKey": "物玛错"}, {"id": "tibet-gerze", "city": "改则", "lon": 84.0626, "lat": 32.3026, "address": "改则", "date": "", "image": "", "highlights": "到改则", "note": "", "photoKey": "改则"}, {"id": "tibet-qiangtang", "city": "羌塘", "lon": 84.0626, "lat": 32.3026, "address": "羌塘", "date": "", "image": "", "highlights": "走羌塘线去民丰", "note": "从改则继续，走羌塘线到民丰。", "photoKey": "羌塘", "locationNote": "羌塘是一片广阔区域，这里用改则附近作为路线段入口；标记不代表具体道路。"}, {"id": "tibet-minfeng", "city": "民丰", "lon": 82.6959, "lat": 37.0641, "address": "民丰", "date": "", "image": "", "highlights": "离开羌塘，到民丰", "note": "", "photoKey": "民丰"}, {"id": "tibet-hotan", "city": "和田", "lon": 79.9222, "lat": 37.1142, "address": "和田", "date": "", "image": "", "highlights": "去哈尔滨之前的一站", "note": "接着到和田，再从和田赶往哈尔滨。", "photoKey": "和田"}, {"id": "tibet-harbin", "city": "哈尔滨", "lon": 126.5349, "lat": 45.8038, "address": "哈尔滨", "date": "", "image": "", "highlights": "信息安全竞赛", "note": "这趟最后到了哈尔滨，打信息安全竞赛。虽然没拿奖，哈哈。", "photoKey": "哈尔滨"}], "photoKey": "羊湖", "routeContext": {"title": "丽江到拉萨之间", "text": "常见滇藏线路会经过香格里拉、德钦、芒康、左贡、八宿、波密、林芝，在芒康一带由 G214 接 G318。这些节点尚待我们核对实际经过路线，暂不计入已抵达的站点。", "cities": ["香格里拉", "德钦", "芒康", "左贡", "八宿", "波密", "林芝"], "source": "https://drc.xizang.gov.cn/zwgk_1941/fz/zx/201811/P020200909430608104977.pdf"}, "coverPhotoKey": "羊湖"}], "restaurants": [{"id": "food-beijing-kaifulaishe", "title": "开府莱舍 · 银泰店", "city": "北京", "branch": "银泰店", "address": "北京市朝阳区建国门外大街2号北京银泰中心in01 B1层B45-46号", "lon": 116.4522728, "lat": 39.9060793, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "西餐", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://www.amap.com/place/B0I275OBPB", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-banu", "title": "巴奴 · 悠唐店", "city": "北京", "branch": "悠唐店", "address": "北京市朝阳区三丰路悠唐购物中心4楼（夜市通道由北门东侧电梯直达）", "lon": 116.4331532, "lat": 39.9206149, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "毛肚火锅", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=fc546ba52c55ee05a3acc40b", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-michongshan", "title": "芈重山 · 通州店", "city": "北京", "branch": "通州店", "address": "北京市通州区翠景北里1号阳光新生活广场一层L139", "lon": 116.6497299, "lat": 39.8883609, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "重庆火锅", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=7f9923b529f0f81443e19295", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-xita", "title": "西塔老太太 · 北京路劲店", "city": "北京", "branch": "昌平店", "address": "北京市昌平区双营西路78号院2号楼3层301室", "lon": 116.2861046, "lat": 40.2057608, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "泥炉烤肉", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=c577ecf4913bd714902ca3be", "selectionBasis": "user-authorized-choice", "locationCandidates": [{"title": "西塔老太太泥炉烤肉(北京回龙观店)", "address": "北京市昌平区育知东路30号院5号楼四层F4-05", "lon": 116.330955, "lat": 40.0705443, "source": "https://map.baidu.com/?qt=s&wd=%E8%A5%BF%E5%A1%94%E8%80%81%E5%A4%AA%E5%A4%AA%E6%98%8C%E5%B9%B3%E5%8D%8E%E8%81%94%E5%BA%97&c=131&ie=utf-8&pn=0"}, {"title": "西塔老太太泥炉烤肉(北京路劲店)", "address": "北京市昌平区双营西路78号院2号楼3层301室", "lon": 116.2861046, "lat": 40.2057608, "source": "https://map.baidu.com/?qt=s&wd=%E8%A5%BF%E5%A1%94%E8%80%81%E5%A4%AA%E5%A4%AA%E5%8C%97%E4%BA%AC%E8%B7%AF%E5%8A%B2%E5%BA%97&c=131&ie=utf-8&pn=0"}]}, {"id": "food-beijing-kaojiang", "title": "烤匠 · 合生汇店", "city": "北京", "branch": "合生汇店", "address": "北京市朝阳区西大望路21号北京朝阳合生汇B1层21街区内", "lon": 116.4743852, "lat": 39.8929809, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "麻辣烤鱼", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://www.amap.com/place/B0KRMS3O9G", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-eryu", "title": "洱语 · 大吉巷店", "city": "北京", "branch": "大吉巷店", "address": "北京市西城区骡马市大街20号院一区8幢LG1层南街（很久以前羊肉串旁）", "lon": 116.3697297, "lat": 39.8858034, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "云南菜", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=faf752d6082277dd13293575", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-niaotun", "title": "鸟屯 · 三里屯店", "city": "北京", "branch": "三里屯店", "address": "北京市朝阳区工体东路甲6号智胜快捷酒店一层", "lon": 116.4450182, "lat": 39.929673, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "烧鸟", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://www.amap.com/place/B000A9DK2J", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-beijing-xuxiaohei", "title": "徐小黑 · 沙河店", "city": "北京", "branch": "沙河店", "address": "北京市昌平区沙河镇路松街75号院5号楼2层201-1", "lon": 116.2749118, "lat": 40.1443539, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "湘菜", "note": "", "revisit": false, "photoKey": "北京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": "https://map.baidu.com/?qt=inf&uid=3ce8f9e303c32b3480a00c20", "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-nanjing-dapaidang", "title": "南京大牌档 · 夫子庙平江府店", "city": "南京", "branch": "", "address": "南京市秦淮区大石坝街48号", "lon": 118.7874389, "lat": 32.022951, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "", "note": "第一场南京旅行，一起吃的南京大排档。", "revisit": false, "photoKey": "南京", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "verified", "coordinateSource": ["https://ditu.amap.com/place/B001917UUW", "https://touch.go.qunar.com/poi/6291218"], "selectionBasis": "user-authorized-choice", "locationCandidates": []}, {"id": "food-disney-duck", "title": "迪士尼的酸萝卜老鸭汤", "city": "上海", "branch": "", "address": "上海迪士尼乐园内（售卖点待确认）", "lon": 121.4737, "lat": 31.2304, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "酸萝卜老鸭汤", "note": "特别好吃。那趟迪士尼，除了创极速光轮，这碗汤也很难忘。", "revisit": true, "photoKey": "上海迪士尼", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.shanghaidisneyresort.com/zh-cn/information/about-dining", "https://note.com/kmciias/n/n3a7d0d1c838c", "https://travelnews.qunar.com/qa_strategy/shanghai-disney-food-guide-2"], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-quzhou-noodles", "title": "衢州那碗炒粉", "city": "衢州", "branch": "", "address": "", "lon": 118.8595, "lat": 28.9701, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "炒粉", "note": "炒粉特别香。店名还要再想想。", "revisit": true, "photoKey": "衢州", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-quzhou-bbq", "title": "衢州那家新疆烧烤店", "city": "衢州", "branch": "", "address": "", "lon": 118.8595, "lat": 28.9701, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "烤馕", "note": "烤馕特别好吃。我们后来为了再吃一次，专门绕路回到衢州。", "revisit": true, "photoKey": "衢州", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xiamen-duck", "title": "第一次吃姜母鸭", "city": "厦门", "branch": "", "address": "厦门市思明区中山路一带（门店待确认）", "lon": 118.0894, "lat": 24.4798, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "姜母鸭", "note": "第一次吃姜母鸭，姜味太重了，我们实在吃不惯，哈哈。", "revisit": false, "photoKey": "厦门", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.amap.com/place/B0FFK1911U", "https://m.cncn.com/meishi/xiamen/food/3302"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "鑫坞堂海鲜热炒（中山路总店）", "address": "厦门市思明区镇邦路24号", "lon": 118.0713497, "lat": 24.4569042, "source": ["https://www.amap.com/place/B0FFK1911U"]}]}, {"id": "food-changsha-heise", "title": "黑色经典", "city": "长沙", "branch": "", "address": "", "lon": 112.9388, "lat": 28.2282, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "", "note": "和茶颜悦色、天宝兄弟一起，是我们的长沙三大巨头。两次去长沙，都少不了它。", "revisit": true, "photoKey": "长沙", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-changsha-chayan", "title": "茶颜悦色", "city": "长沙", "branch": "", "address": "", "lon": 112.9388, "lat": 28.2282, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "", "note": "我们的长沙老三样之一。第二趟先在长沙吃两天，当然也要喝。", "revisit": true, "photoKey": "长沙", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.cyystea.com/home"], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-changsha-tianbao", "title": "天宝兄弟", "city": "长沙", "branch": "", "address": "", "lon": 112.9388, "lat": 28.2282, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "", "note": "长沙三大巨头，最爱之一。好吃到第二次去贵州前，还要先在长沙吃两天。", "revisit": true, "photoKey": "长沙", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.amap.com/place/B0HA2UQGLL", "https://hn.people.com.cn/n2/2026/0711/c356884-41636194.html"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "天宝兄弟（长沙汇景城店）", "address": "长沙市天心区白沙路汇景城B栋3层3017—3018号", "lon": 112.9646795, "lat": 28.1775577, "source": ["https://www.amap.com/place/B0HA2UQGLL"]}]}, {"id": "food-kaili-niugundang", "title": "牛滚荡", "city": "凯里", "branch": "", "address": "", "lon": 107.9773, "lat": 26.5888, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "白酸汤", "note": "白酸汤特别特别好吃，是我们心里的白月光。第一次临时去了凯里，第二次又专门回来吃。", "revisit": true, "photoKey": "凯里", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.trip.com/restaurant/china/kaili/detail/niugundang-176170/", "https://sa.trip.com/restaurant/china/qiandongnan/detail/restaurant-77697753/"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "牛滚荡（金竹园分店）", "address": "凯里市友庄路12号金冠酒店附近", "lon": 107.9724835, "lat": 26.5706236, "source": ["https://www.trip.com/restaurant/china/kaili/detail/niugundang-176170/"]}, {"title": "牛滚荡（风情园店）", "address": "凯里市大十字街道友庄南路十二号大院对面", "lon": 107.9698688, "lat": 26.5658264, "source": ["https://sa.trip.com/restaurant/china/qiandongnan/detail/restaurant-77697753/"]}]}, {"id": "food-kaili-miaoge", "title": "苗阿哥", "city": "凯里", "branch": "", "address": "", "lon": 107.9773, "lat": 26.5888, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "红酸汤 · 黄鸭叫", "note": "黄鸭叫的鱼肉超级嫩。吃完我们总结：红酸吃鱼，白酸吃肉。", "revisit": true, "photoKey": "凯里", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.trip.com/restaurant/china/kaili/detail/restaurant-16291994/", "https://us.trip.com/restaurant/china/kaili/detail/restaurant-33642862/"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "苗阿哥酸汤牛肉火锅（体育场店）", "address": "凯里市迎宾大道凯里民族体育场南门东北侧", "lon": 107.9747959, "lat": 26.5692882, "source": ["https://www.trip.com/restaurant/china/kaili/detail/restaurant-16291994/"]}, {"title": "苗阿哥（国贸店）", "address": "凯里市永乐路国贸5楼（北京西路21号凯里国贸购物中心）", "lon": 107.9696165, "lat": 26.5842027, "source": ["https://us.trip.com/restaurant/china/kaili/detail/restaurant-33642862/"]}]}, {"id": "food-guiyang-coffee", "title": "贵阳的特色咖啡", "city": "贵阳", "branch": "", "address": "", "lon": 106.6302, "lat": 26.647, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "特色咖啡", "note": "这趟试了好几家。贵阳有很多神奇的咖啡，具体店名以后再补。", "revisit": false, "photoKey": "贵阳", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-anshun-nightmarket", "title": "安顺夜市", "city": "安顺", "branch": "", "address": "", "lon": 105.9476, "lat": 26.2531, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "牛小肠", "note": "夜市很好吃，尤其是牛小肠。", "revisit": true, "photoKey": "安顺", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-chongqing-badaotang", "title": "巴倒烫", "city": "重庆", "branch": "", "address": "", "lon": 106.5516, "lat": 29.563, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "火锅 · 鹅肠 · 毛肚", "note": "山上的室外火锅很有印象，鹅肠和毛肚特别香。", "revisit": true, "photoKey": "重庆", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://www.amap.com/place/B00178X4W1"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "巴倒烫重庆陆派火锅（南山总店）", "address": "重庆市南岸区南山街道黄金公路巴倒烫火锅山庄", "lon": 106.5858441, "lat": 29.4993133, "source": ["https://www.amap.com/place/B00178X4W1"]}]}, {"id": "food-chongqing-hotpot", "title": "重庆吃过的其他火锅", "city": "重庆", "branch": "", "address": "", "lon": 106.5516, "lat": 29.563, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "火锅", "note": "开车回北京的路上，在重庆又吃了不少好吃的火锅。店名以后慢慢补。", "revisit": true, "photoKey": "重庆", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xian-roujiamo", "title": "子午张记肉夹馍", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "肉夹馍", "note": "西安一天吃四顿，这家的肉夹馍很好吃。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": ["https://ditu.amap.com/place/B0FFGY55W3"], "selectionBasis": "matching-branch", "locationCandidates": [{"title": "子午路张记肉夹馍（子午路总店）", "address": "西安市雁塔区子午路十字东南角，东方大酒店正对面", "lon": 108.9347965, "lat": 34.2240582, "source": ["https://ditu.amap.com/place/B0FFGY55W3"]}]}, {"id": "food-xian-liangpi", "title": "西安的凉皮", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "凉皮", "note": "这趟西安吃得很满足，凉皮也很好吃。具体店名待补。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xian-mianpian", "title": "西安的面片", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "面片", "note": "一天四顿里，也有很好吃的面片。具体店名待补。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}, {"id": "food-xian-saozi", "title": "西安的臊子面", "city": "西安", "branch": "", "address": "", "lon": 108.9398, "lat": 34.3416, "date": "", "image": "", "rating": 0, "cost": "", "dishes": "臊子面", "note": "臊子面也很好吃。具体店名待补。", "revisit": true, "photoKey": "西安", "updatedAt": "2026-11-10T00:00:00.000Z", "sourceURL": "", "locationStatus": "unresolved", "coordinateSource": [], "selectionBasis": "matching-branch", "locationCandidates": []}], "recipes": [{"id": "recipe-home-1", "title": "可乐鸡翅", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "鸡中翅 8–10 只\n可乐 1 听\n姜 3 片、葱段\n料酒 1 勺、生抽 2 勺、老抽半勺", "steps": "鸡翅划两刀，冷水加姜片、料酒焯水沥干。\n少油把鸡翅煎到两面微黄。\n加生抽、老抽翻炒上色，倒可乐没过鸡翅，中火煮 12 分钟。\n最后转大火收浓汤汁出锅。", "chef": "", "minutes": "25", "note": "", "photoKey": "可乐鸡翅", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-2", "title": "江西炒粉", "date": "", "category": "面饭", "image": "", "rating": 0, "ingredients": "江西干米粉 1 把\n瘦肉丝或鸡蛋、青菜、豆芽\n蒜末、小米辣、葱段\n生抽 2 勺、老抽 1 勺、蚝油 1 勺、辣椒粉", "steps": "干米粉煮到七八分熟，过凉水沥干，加半勺老抽和少许油拌匀。\n热锅炒熟鸡蛋或肉丝，放蒜末和小米辣爆香。\n转大火下米粉抖散翻炒。\n放青菜、豆芽、生抽和蚝油翻匀，撒葱段出锅。", "chef": "", "minutes": "15", "note": "", "photoKey": "江西炒粉", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-3", "title": "拍黄瓜", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "黄瓜 2 根\n蒜 4 瓣、小米辣 1–2 个、香菜\n生抽 1.5 勺、陈醋 2 勺、糖半小勺、香油几滴", "steps": "黄瓜用刀背拍裂切块。\n加一点盐抓匀静置两分钟，倒掉多余水分。\n加蒜末、小米辣、生抽、陈醋、糖和香油拌匀即可。", "chef": "", "minutes": "8", "note": "", "photoKey": "拍黄瓜", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-4", "title": "油焖大虾", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "大虾 1 斤\n姜丝、蒜末、葱段\n番茄酱 1 小勺、生抽 2 勺、料酒 1 勺、糖 1 勺", "steps": "大虾剪须开背挑虾线，吸干水分。\n热油下大虾，轻压虾头煎出虾油。\n放姜蒜炒香，加料酒、生抽、糖和番茄酱。\n加小半碗热水盖盖焖 3 分钟，开盖大火收汁，撒葱段出锅。", "chef": "", "minutes": "20", "note": "", "photoKey": "油焖大虾", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-5", "title": "外婆红烧肉", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "五花肉 500g\n冰糖 15g、姜 4 片、八角 1 颗、桂皮一小块\n料酒 2 勺、生抽 2 勺、老抽 1 勺", "steps": "五花肉切块，冷水焯水后温水洗净沥干。\n小火把五花肉煎出多余油脂盛出。\n底油炒化冰糖成琥珀色，倒回五花肉翻炒上色。\n加姜片、香料、生抽、老抽，冲入足量开水小火炖 45 分钟，大火收汁。", "chef": "", "minutes": "60", "note": "", "photoKey": "外婆红烧肉", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-6", "title": "糖醋排骨", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "猪肋排 500g\n姜片、葱结、白芝麻\n料酒 1 勺、生抽 2 勺、糖 3 勺、香醋 4 勺、清水 5 勺、老抽半勺", "steps": "排骨冷水加葱姜料酒焯水，温水洗净沥干。\n少油把排骨煎到表面微黄。\n倒入调好的糖醋汁，大火烧开转小火盖盖焖 30 分钟。\n开盖大火收汁到挂壁，撒白芝麻出锅。", "chef": "", "minutes": "45", "note": "", "photoKey": "糖醋排骨", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-7", "title": "鸡汤", "date": "", "category": "汤羹", "image": "", "rating": 0, "ingredients": "土鸡半只\n老姜 1 块、大葱 2 段、红枣 4 颗、枸杞\n盐、白胡椒粉", "steps": "鸡块冷水加姜片焯去血沫，温水洗净。\n连同老姜、葱段、红枣放进砂锅，一次加足开水。\n大火烧开转最小火慢炖一个多小时。\n关火前 10 分钟放枸杞和盐，喝时可加一点白胡椒粉。", "chef": "", "minutes": "90", "note": "", "photoKey": "鸡汤", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-8", "title": "西红柿鸡蛋", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "西红柿 2 个、鸡蛋 3–4 个、葱花\n盐、糖半勺", "steps": "鸡蛋加少许盐和几滴清水打散。\n西红柿去皮切块。\n热锅炒散鸡蛋盛出，下西红柿炒出汤汁。\n倒回鸡蛋加盐和半勺糖翻匀，撒葱花出锅。", "chef": "", "minutes": "10", "note": "", "photoKey": "西红柿鸡蛋", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-9", "title": "虎皮尖椒", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "青椒 6–8 根、蒜 4 瓣\n生抽 2 勺、香醋 1 勺、蚝油半勺、糖半勺、清水 2 勺", "steps": "青椒去蒂用刀背轻拍。\n热锅不放油干焙青椒，边按压边烙出虎皮纹。\n淋一圈油下蒜末炒香。\n沿锅边淋入调好的碗汁，大火收一下汤汁出锅。", "chef": "", "minutes": "12", "note": "", "photoKey": "虎皮尖椒", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-10", "title": "辣椒炒肉", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "前腿肉或五花肉 250g、螺丝椒 4–5 根\n拍蒜 4 瓣、豆豉几粒\n生抽 2 勺、老抽半勺、蚝油半勺、盐", "steps": "肥瘦分开切，瘦肉加生抽、老抽和少许油抓匀；青椒切块。\n少油先煸青椒至微焦盛出。\n下肥肉、拍蒜、豆豉煸香，大火下瘦肉滑散。\n倒回青椒，加生抽、蚝油翻炒十几秒出锅。", "chef": "", "minutes": "15", "note": "", "photoKey": "辣椒炒肉", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-11", "title": "西红柿面", "date": "", "category": "面饭", "image": "", "rating": 0, "ingredients": "面条 2 人份、西红柿 2 个、鸡蛋 2 个\n青菜、葱花、生抽 1.5 勺、盐、香油", "steps": "先炒鸡蛋，再下西红柿炒出红汤，加开水烧滚。\n下面条煮至八九分熟，放入鸡蛋、青菜和生抽、盐调味。\n撒葱花、滴几滴香油出锅。", "chef": "", "minutes": "12", "note": "", "photoKey": "西红柿面", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "recipe-home-12", "title": "老奶洋芋", "date": "", "category": "家常菜", "image": "", "rating": 0, "ingredients": "黄心土豆 2 个、小葱一大把、蒜末\n盐、花椒粉、干辣椒面或火腿丁（可选）", "steps": "土豆去皮切块蒸熟，趁热压成粗颗粒土豆泥。\n热油下蒜末炒香，倒入土豆泥耐心翻炒按压，让底部微焦。\n加盐、花椒粉和一大把葱花拌匀出锅。", "chef": "", "minutes": "25", "note": "", "photoKey": "老奶洋芋", "updatedAt": "2026-11-10T00:00:00.000Z"}], "letters": [{"id": "letter-since-0915", "title": "写给 21 岁的丸子", "date": "2026-11-22", "voice": "", "updatedAt": "2026-11-10T00:00:00.000Z", "body": "写下这封信的时候，离你 21 岁的零点已经很近了。终于，把上个生日就该给你的网站做出来了。很多话很多事平时其实并不是没有想过，只是和你呆在一起的时候，日子过得太快太轻，总觉得还有时间，下顿饭可以说，明天还可以做，总之有的是时间。直到你的 21 岁真的走到眼前，我才突然想在这个时刻停下来，认真地给你写一封足够长的信——把此刻的你、我眼中最独一无二的你，和一些我内心的真实想法，好好地存一次档。\n\n在这一年多里我眼中的你，首先是一个让我由衷欣赏和钦佩的独特灵魂。我之前一直形容你很灵动，后来细想，那其实是一种极其难得的生命力，也是你最迷人的地方：你既有小女生的明媚与柔软，会为一个好看的簪子、一顿美味的巴奴、一只明艳的手工花环，甚至仅仅是一个不错的晴天而雀跃；同时，你又有着远比外表更有深度、更有韧劲的底色。「已识乾坤大，犹怜草木青」，我最喜欢的一句诗，这句话或许还不适合形容现在的你，但我相信你会成为这样的人。你既能抓住生活中的一些小幸福，又能心怀远大的追求，这其实真的很难得。当时在黑板上画小花为什么那么让我难忘和被戳到，其实就是因为这是你鲜活生命力的体现——太多人要么止步于当下的安逸，要么为了远方的目标把当下过得满目疮痍。（虽然在一些短期事儿很多的时候你也会很焦虑烦躁，但这不是常态，拉长时间来看你有着一个比较稳定且向上的内核。）\n\n其实我自觉并不是一个很有生命力的人，我一直觉得我开心的阈值在慢慢变得很高，遇到你之前每天几乎没有什么能让我真正谈得上开心的事情，除了保研成功，或者在我自己的价值和努力得到肯定的时候，在很多生活的小事上我都提不起兴趣。其实我一直觉得这样是不对的，但却也回不去了。确实是你的出现带给了我久违的生命力，和你在一起的每一天都很开心，和你做的很多小事也让我充满了期待和兴奋，或许这就是爱的力量。就像你知道的，我不太重视友情，所以爱情在我这里就占据了很多，它完全替代了朋友能带给我的快乐。其实我知道这也不太对，包括我爸前两天和我打电话的时候也提到过，让我多一些 social 和朋友，这在以后会很有用，但我确实提不起来兴趣，或许我只能强迫自己去多做一些 social 在必要的时候（比如张熙的这个组里同门确实需要多一些交流）。但我想说，你在我的生命中真的占比非常多，是我不能失去的一部分。一体两面，这就会导致我是一个在恋爱里有很高需求的另一半，现在我们天天在一起所以很开心，其实我一直是有担忧的——当我们没法一直一起，或者需要经常分开、你不能一直陪着我的时候，我们是否还能像现在这样。因为你其实在忙其他的事情时是很投入的，不会想起我，包括那个时候你的生活中也会穿插进来很多的别人和事情。我想我会努力进行调整，正好趁着你不在的时间里多投入一些到科研（因为其实我和你很像，一段时间没有读论文、没有干活也会焦虑），多一些其他的 social，但我一定会很想你。我们目前也还没有经历过，所以到时候肯定还会有一段时间的磨合，但 anyway 我是真的很想和你一直走下去，也相信我们会一直走下去的，我真的真的很爱你。\n\n你又是一个很有想法的人，其实我们真的有很多很像的地方。实话说，你想尝试的事情有很多都是我也很想做的，对于很多独特体验的追求，譬如支教，以及一些富有创造性的工作比如当编剧、调查记者，其实都是我也很感兴趣、觉得很有意义的事情。但受限于很多现实原因，以及本身我对技术的兴趣，这其中的诸多我肯定都无法一一尝试，所以我真的很欣赏你即使已经在北邮，也依旧不放弃对自己热爱事业的追求，哪怕前路如此艰辛。当然，人都有自私的心理，之前有过的关于未来的几次争执，我一直不希望你去做一些要到处飞、很忙碌或者男性占比太大的工作，一方面是我确实太爱你、太贪恋和你待在一起的时光；另一方面，在人生的重大课题上，我其实是个很保守、非常讨厌不确定性的人。那些时候我的执拗，说到底是因为害怕失去掌控，害怕未来的变数把我们推远，所以我希望你可以理解我的一些小九九。但我又真的很爱你，不忍心看到你一直被困在自己不喜欢的事情里痛苦地挣扎。比起把你留在绝对安全的舒适圈里，我更喜欢看你笑、看你由衷地高兴，所以我也一定会努力收起那些狭隘的担忧，全力支持你去追求自己的热爱。我也相信你会把我规划进你的人生，做到平衡，毕竟爱情是两个人互相顾及、互相搀扶的，我应该对你、对我、对我们都有信心。\n\n在做网站的时候一幕幕细数，我们居然已经走过了 400 多个日夜，而且是浓度极高的 430 天，有无数的难忘瞬间。其实感觉我的人生也因为你划成了两段，认识你之前的记忆已经逐渐模糊。做这个网站也不只是想送你一份生日礼物——人总是遗忘，我希望它可以帮助我们对抗遗忘，记录下来那些价值千金的时刻。我想在很多年以后，当我们记不清铜锣山的名字、那家烤馕店在哪个路口时，还能一起重新拾起这份记忆，记起我们曾经那样热烈、那样自由地活过。\n\n细数我们的五段旅行其实也很有意思，会发现：我们记忆里最难忘的瞬间，往往发生在偏离计划的地方。最早在南京的时候，我们是相当保守的，只是在大牌档的喧闹里吃第一顿旅行的饭，在鸡鸣寺和梧桐树影底下慢慢晃，逛完博物院拐进先锋书店，天黑了借两辆单车吹一场没有目的地的晚风。谁能想到，就是从那一晚的晚风出发，我们日后的旅行会变得一发不可收拾。我们在凌晨五点摸黑爬过铜锣山，在只有两个人的山路上提心吊胆，最后在厚厚的大雾里等了一场根本没露面的日出；我们在漳州开错了路，却误打误撞拐进一片没有游客的安静村落，撞见了比景区还动人的野生土楼；我们甚至会为了衢州那口念念不忘的新疆烤馕，在返程路上心甘情愿绕一大圈杀个回马枪。后来在长沙把「三大巨头」吃成了快乐老家，临时起意一脚油门开去凯里，被白酸汤和黄鸭叫彻底征服，还总结出了「红酸吃鱼，白酸吃肉」的定理；再后来，哪怕在安顺遇上剐蹭、在大妈那受了委屈、错过了原本想去的织金洞，我们两个坐在车里一商量，还是能做出最潇洒的决定——飞机不坐了，睡着床车，吃着重庆南山的露天火锅和西安一天四顿的碳水，直接把车开回北京。更荒诞也更浪漫的，是今年那趟进藏。从丽江一路爬升到拉萨，绕着阿里大环线一错再错，在扎日南木错美人尖的搓板路上颠到怀疑人生，穿过无边无际的羌塘到新疆民丰、和田，最后横跨大半个中国赶去哈尔滨，打完那场没拿奖想起来就让人恼火的比赛。\n\n常理以为，好的旅行应该严丝合缝、顺顺利利，不该有大雾、不该有剐蹭、不该有吃不惯的姜母鸭和陷进泥里的车胎。但和你在一起让我发现，原来真正让人着迷的，从来不是世界有多配合我们，而是无论计划被打乱成什么样、前头的路有多颠簸，只要我转过头看副驾，你都在旁边。你的那种哪怕天塌下来，我们也能先去吃顿好的再慢慢商量的精神，是我过去二十多年里，从未在任何人身上体会过的踏实。\n\n回归正题，在 21 岁生日这个崭新的起点上，我最想送给你的礼物，其实不是任何空泛的誓言，而是两样东西：自由，和底气。我祝二十一岁的你，永远保有对这个世界源源不断的好奇心，保有说走就走的兴致和吃遍山海的胃口；祝你有底气去尝试所有的热爱，哪怕偶尔走弯路也不必害怕；更祝你永远拥有随时说不的自由——不迎合，不委屈，只按照你真正喜欢的方式，长成你自己想要的模样。\n\n我会一直站在离你最近的地方。\n\n二十一岁生日快乐，我的女孩。很高兴能陪你走过二十岁，也很期待接下来，和你一起走过这漫漫余生。\n\n　　　　　　　　　　　　　　　　　　爱你的尖小尖"}], "plans": [{"id": "plan-pending-zhijindong", "title": "去补上安顺那趟错过的织金洞", "note": "上次在安顺处理剐蹭多留了一天没去成，下次再去贵州吃酸汤时一起补上。", "date": "", "done": false, "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-pending-xiapu-sunset", "title": "在霞浦多待一天，不赶路看海", "note": "上次只匆匆停了一个小时。", "date": "", "done": false, "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-pending-kitchen-menu", "title": "家里小灶再学几道新菜", "note": "下次试试自己在家复刻酸汤或者新菜。", "date": "", "done": false, "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-quzhou-naan", "title": "为了烤馕专门绕回衢州再吃一次", "note": "回上海的路上真的专门绕回去了。", "date": "", "done": true, "completedDate": "江南入海", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-quanzhou-zanhua", "title": "在泉州西街第一次一起簪花", "note": "", "date": "", "done": true, "completedDate": "泉州西街", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-bedcar-north", "title": "第一次床车旅行，从毕节一路开回北京", "note": "临时决定不坐飞机，顺路吃了重庆和西安。", "date": "", "done": true, "completedDate": "一路向北", "updatedAt": "2026-11-10T00:00:00.000Z"}, {"id": "plan-done-tibet-lakes", "title": "自驾滇藏线、阿里大环线和羌塘线", "note": "湖一个接一个，美人尖那段烂路也开过去了。", "date": "", "done": true, "completedDate": "藏地来信", "updatedAt": "2026-11-10T00:00:00.000Z"}]};
 const JOURNAL_PHOTOS = {"南京": {"image": "./assets/media/m-9f619abb27.jpg", "source": "https://commons.wikimedia.org/wiki/File:Jiming_Temple_Nanjing_-_%E5%8D%97%E4%BA%AC_%E9%B8%A1%E9%B8%A3%E5%AF%BA_(2024)_-_img_19.jpg", "author": "Chainwit.", "license": "CC BY 4.0", "licenseURL": "https://creativecommons.org/licenses/by/4.0", "actualTitle": "File:Jiming Temple Nanjing - 南京 鸡鸣寺 (2024) - img 19.jpg", "description": "Jiming Temple, Nanjing"}, "上海迪士尼": {"image": "./assets/media/m-f6ba400b92.jpg", "source": "https://commons.wikimedia.org/wiki/File:Shanghai_Disneyland_Castle_Night.jpg", "author": "Memm", "license": "CC BY 4.0", "licenseURL": "https://creativecommons.org/licenses/by/4.0", "actualTitle": "File:Shanghai Disneyland Castle Night.jpg", "description": "Shanghai Disneyland Castle"}, "绍兴鲁迅故里": {"image": "./assets/media/m-6467726f7e.jpg", "source": "https://commons.wikimedia.org/wiki/File:Former_Residence_of_Lu_Xun_in_Shaoxing_01_2018-09.jpg", "author": "猫猫的日记本", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "File:Former Residence of Lu Xun in Shaoxing 01 2018-09.jpg", "description": "​绍兴鲁迅故居，原周家新台门西首第四进楼屋，南侧。"}, "乌镇": {"image": "./assets/media/m-9950ba99d4.jpg", "source": "https://commons.wikimedia.org/wiki/File:Canal_in_Wuzhen_07.JPG", "author": "Immanuel Giel", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "File:Canal in Wuzhen 07.JPG", "description": "Kanal im ostchinesischen Touristenstädchen Wuzhen, Provinz Zhejiang"}, "杭州": {"image": "./assets/media/m-a3e924bc4e.jpg", "source": "https://commons.wikimedia.org/wiki/File:20260424_West_Lake_and_Hangzhou_Skyline.jpg", "author": "Windmemories", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "File:20260424 West Lake and Hangzhou Skyline.jpg", "description": "West Lake and Hangzhou Skyline"}, "衢州": {"image": "./assets/media/m-427b5567f2.jpg", "source": "https://commons.wikimedia.org/wiki/File:Quzhou_chengqiang_9513.jpg", "author": "Doctoroftcm", "license": "CC BY-SA 3.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0", "actualTitle": "File:Quzhou chengqiang 9513.jpg", "description": "​衢州城墙礼贤门，全国重点文物保护单位，位于衢州市。"}, "黄山徽派村落": {"image": "./assets/media/m-e66a945021.jpg", "source": "https://commons.wikimedia.org/wiki/File:Yixian_Hongcun_2016.09.09_17-27-03.jpg", "author": "Zhangzhugang", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "3840px-Yixian_Hongcun_2016.09.09_17-27-03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail", "description": "Village in Anhui, People's Republic of China"}, "漳州土楼云水谣": {"image": "./assets/media/m-aed18ad107.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E4%BA%91%E6%B0%B4%E8%B0%A3%E5%A4%95%E7%85%A7_-_Yunshuiyao_Village_Evening_-_2013.11_-_panoramio.jpg", "author": "rheins", "license": "CC BY 3.0", "licenseURL": "https://creativecommons.org/licenses/by/3.0", "actualTitle": "File:云水谣夕照 - Yunshuiyao Village Evening - 2013.11 - panoramio.jpg", "description": "云水谣夕照 - Yunshuiyao Village Evening - 2013.11"}, "厦门": {"image": "./assets/media/m-52cc7df28d.jpg", "source": "https://commons.wikimedia.org/wiki/File:Xiamen_as_seen_from_the_coast_of_Xiaojinmen.jpg", "author": "オルドルボントン", "license": "CC0", "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en", "actualTitle": "File:Xiamen as seen from the coast of Xiaojinmen.jpg", "description": "Xiamen as seen from the coast of Xiaojinmen."}, "泉州西街": {"image": "./assets/media/m-7312abfe16.jpg", "source": "https://commons.wikimedia.org/wiki/File:Quanzhou_Kaiyuan_Temple-the_Hall_of_Mahavira.jpg", "author": "Tom@HK", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "3840px-Quanzhou_Kaiyuan_Temple-the_Hall_of_Mahavira.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail", "description": "Buddhist temple in Quanzhou, China"}, "福州": {"image": "./assets/media/m-e112244980.jpg", "source": "https://commons.wikimedia.org/wiki/File:Fuzhou_Taixi_CBD.jpg", "author": "Listwiseafford", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "Fuzhou_Taixi_CBD.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Capital of Fujian, China"}, "霞浦": {"image": "./assets/media/m-5e706c233e.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E9%9C%9E%E6%B5%A6%E5%8E%BF%E5%BD%B1%E9%9B%86.png", "author": "FradonStar\nJay Huang from Pleasanton, USA\n爵士鼓手", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "霞浦县影集.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "County in Fujian, People's Republic of China"}, "嘉兴绮园": {"image": "./assets/media/m-039c725126.jpg", "source": "https://m.sohu.com/a/564366793_100164422", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://m.sohu.com/a/564366793_100164422", "actualTitle": "嘉兴绮园", "description": "嘉兴绮园"}, "长沙": {"image": "./assets/media/m-4d4a1b15c5.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E7%88%B1%E6%99%9A%E4%BA%AD%EF%BC%88%E7%A7%8B-%E4%BE%A7%E9%9D%A2%EF%BC%89.jpg", "author": "Junchong", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "爱晚亭（秋-侧面）.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Capital of Hunan, Central China"}, "凯里": {"image": "./assets/media/m-d44007e155.jpg", "source": "https://commons.wikimedia.org/wiki/File:Kaili_City.jpg", "author": "Zhangmoon618", "license": "CC BY-SA 3.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0", "actualTitle": "File:Kaili City.jpg", "description": "Kaili City, Guizhou province, China."}, "贵阳": {"image": "./assets/media/m-255f0d5c5a.jpg", "source": "https://commons.wikimedia.org/wiki/File:Guizhou_Financial_City_District.jpg", "author": "Ryedamien", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "Guizhou_Financial_City_District.jpg", "description": "贵阳"}, "安顺黄果树": {"image": "./assets/media/m-9cd03aec15.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E9%BB%84%E6%9E%9C%E6%A0%91%E7%80%91%E5%B8%83_2026-07-31_01.jpg", "author": "Kcx36", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "3840px-黄果树瀑布_2026-07-31_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail", "description": "Waterfall in Guizhou, China"}, "毕节": {"image": "./assets/media/m-367db1ecd3.jpg", "source": "https://commons.wikimedia.org/wiki/File:Bijie_Feixiong_Airport_%281%29.jpg", "author": "DiverDave", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "Bijie_Feixiong_Airport_(1).jpg", "description": "毕节"}, "重庆": {"image": "./assets/media/m-99404e15f0.jpg", "source": "https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg", "author": "Jonashtand", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Building complex in Chongqing, China"}, "西安": {"image": "./assets/media/m-1496b93b94.jpg", "source": "https://commons.wikimedia.org/wiki/File:Xi%27an_Bell_Tower_2024.10.jpg", "author": "xiquinhosilva", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "Xi'an_Bell_Tower_2024.10.jpg", "description": "西安"}, "北京": {"image": "./assets/media/m-e0e0519090.jpg", "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Beijing_CBD_with_B-5906_approaching_%2820211016171955%29_%281%29.jpg", "author": "N509FZ", "license": "CC BY 4.0", "licenseURL": "https://creativecommons.org/licenses/by/4.0", "actualTitle": "3840px-Skyline_of_Beijing_CBD_with_B-5906_approaching_(20211016171955)_(1).jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail", "description": "Capital city of China"}, "丽江": {"image": "./assets/media/m-849635e2d7.jpg", "source": "https://commons.wikimedia.org/wiki/File:Lijiang_-_panoramio_%286%29.jpg", "author": "Pavel Špindler", "license": "CC BY 3.0", "licenseURL": "https://creativecommons.org/licenses/by/3.0", "actualTitle": "Lijiang_-_panoramio_(6).jpg", "description": "丽江"}, "拉萨": {"image": "./assets/media/m-4abf9a7045.jpg", "source": "https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg", "author": "Lhasa Government", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "Potala_Palace_HQ.jpg", "description": "拉萨"}, "日喀则": {"image": "./assets/media/m-78302cab60.jpg", "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_Tashilhunpo_Monastery.jpg", "author": "B_cool from SIN, Singapore", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "Entrance_to_Tashilhunpo_Monastery.jpg", "description": "日喀则"}, "羊湖": {"image": "./assets/media/m-db168208e3.jpg", "source": "https://commons.wikimedia.org/wiki/File:LAC_YAMDROK.jpg", "author": "Alassb777", "license": "CC BY 4.0", "licenseURL": "https://creativecommons.org/licenses/by/4.0", "actualTitle": "3840px-LAC_YAMDROK.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail", "description": "Lake in Tibet"}, "冲巴雍措": {"image": "./assets/media/m-634b124c62.jpg", "source": "https://hk.trip.com/travel-guide/attraction/kangma/chongba-yongcuo-lake-130368535/", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://hk.trip.com/travel-guide/attraction/kangma/chongba-yongcuo-lake-130368535/", "actualTitle": "冲巴雍措"}, "多情错": {"image": "./assets/media/m-75b7baa6a3.jpg", "source": "https://cj.sina.com.cn/articles/view/1940798632/p73ae3ca802700rese", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://cj.sina.com.cn/articles/view/1940798632/p73ae3ca802700rese", "actualTitle": "多情错", "description": "多情错"}, "普莫雍错": {"image": "./assets/media/m-9084e4ef9f.jpg", "source": "https://commons.wikimedia.org/wiki/File:PumaYumco_winter_mosaic.jpg", "author": "ISS Crew Earth Observations experiment and the Image Science &amp; Analysis Group, Johnson Space Center. Images stitched together by NASA Earth Observatory newsroom.", "license": "Public domain", "licenseURL": "https://commons.wikimedia.org/wiki/File:PumaYumco_winter_mosaic.jpg", "actualTitle": "PumaYumco_winter_mosaic.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Lake of China"}, "吉隆口岸": {"image": "./assets/media/m-15717bfcbd.jpg", "source": "https://gs.ctrip.com/html5/you/sight/gyirong120374/147275.html", "author": "原图作者，详见来源", "license": "详见原图页面", "licenseURL": "https://gs.ctrip.com/html5/you/sight/gyirong120374/147275.html", "actualTitle": "吉隆沟实景", "description": "同县吉隆沟风景，并非口岸建筑"}, "亚洲一号观景台": {"image": "./assets/media/m-15717bfcbd.jpg", "source": "https://gs.ctrip.com/html5/you/sight/gyirong120374/147275.html", "author": "原图作者，详见来源", "license": "详见原图页面", "licenseURL": "https://gs.ctrip.com/html5/you/sight/gyirong120374/147275.html", "actualTitle": "吉隆沟实景", "description": "吉隆沟风景，用于同区域配图，非观景台特定机位"}, "佩枯措": {"image": "./assets/media/m-9df7af3287.jpg", "source": "https://commons.wikimedia.org/wiki/File:Lake_paiku.jpg", "author": "NASA", "license": "Public domain", "licenseURL": "https://commons.wikimedia.org/wiki/File:Lake_paiku.jpg", "actualTitle": "Lake_paiku.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Lake of Tibet, China"}, "扎日南木错": {"image": "./assets/media/m-ad251251b2.jpg", "source": "https://you.ctrip.com/sight/coqen120146/132147.html", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://you.ctrip.com/sight/coqen120146/132147.html", "actualTitle": "扎日南木错", "description": "扎日南木错"}, "文布南村当惹雍错": {"image": "./assets/media/m-a967b89ffd.jpg", "source": "https://www.tibet.tw/tibet-group-tour/ultimate-tour-with-northern-tibet.html", "author": "西藏旅行", "license": "版权归原作者，见来源页", "licenseURL": "https://www.tibet.tw/tibet-group-tour/ultimate-tour-with-northern-tibet.html", "actualTitle": "文布南村当惹雍错", "description": "文布南村当惹雍错"}, "色林错": {"image": "./assets/media/m-b00e136971.jpg", "source": "https://commons.wikimedia.org/wiki/File:Siling_Lake.jpg", "author": "NASA Earth Observatory images by Lauren Dauphin, using Landsat data from the U.S. Geological Survey. Story by Andi Brinn Thomas.", "license": "Public domain", "licenseURL": "https://commons.wikimedia.org/wiki/File:Siling_Lake.jpg", "actualTitle": "Siling_Lake.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Lake in Tibet"}, "洞错": {"image": "./assets/media/m-5eb556f6f1.jpg", "source": "https://commons.wikimedia.org/wiki/File:Tong_Tso_in_G%C3%AArz%C3%AA_County%2C_Tibet%2C_China.jpg", "author": "李麓扬，上传者：Zhangmoon618", "license": "CC BY-SA 3.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0", "actualTitle": "Tong_Tso_in_Gêrzê_County,_Tibet,_China.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Salt lake in China"}, "物玛错": {"image": "./assets/media/m-c80bd8a1d2.jpg", "source": "https://www.jshj.org/greenpic_show.aspx?id=1837", "author": "原图作者，详见来源", "license": "详见原图页面", "licenseURL": "https://www.jshj.org/greenpic_show.aspx?id=1837", "actualTitle": "物玛错", "description": "物玛错"}, "改则": {"image": "./assets/media/m-a306cd5704.jpg", "source": "https://commons.wikimedia.org/wiki/File:Tong_Tso_in_G%C3%AArz%C3%AA_County%2C_Tibet%2C_China.jpg", "author": "李麓扬，上传者：Zhangmoon618", "license": "CC BY-SA 3.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0", "actualTitle": "Tong_Tso_in_Gêrzê_County,_Tibet,_China.jpg", "description": "改则"}, "羌塘": {"image": "./assets/media/m-daa9021697.jpg", "source": "https://commons.wikimedia.org/wiki/File:Changpas_nomadic_people_-_Changtang_-_Tibet.jpg", "author": "6-A04-W96-K38-S41-V38", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "Changpas_nomadic_people_-_Changtang_-_Tibet.jpg", "description": "羌塘"}, "民丰": {"image": "./assets/media/m-63464d1a9c.jpg", "source": "https://peking.bjd.com.cn/content/s67333bc9e4b0a29cf60e93c6.html", "author": "北京日报转载，作者见来源", "license": "版权归原作者", "actualTitle": "民丰县沙漠防护区域", "description": "民丰县沙漠风景"}, "和田": {"image": "./assets/media/m-41dbdc7488.jpg", "source": "https://commons.wikimedia.org/wiki/File:Kurban_Tulum_with_Mao_Zedong%2C_Hotan%2C_China.jpg", "author": "Yoshi Canopus", "license": "CC BY-SA 3.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0", "actualTitle": "Kurban_Tulum_with_Mao_Zedong,_Hotan,_China.jpg", "description": "和田"}, "哈尔滨": {"image": "./assets/media/m-81985147be.jpg", "source": "https://commons.wikimedia.org/wiki/File:West_facade_of_St._Sophia_Cathedral%2C_Harbin_%2820230721150450%29.jpg", "author": "N509FZ", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "West_facade_of_St._Sophia_Cathedral,_Harbin_(20230721150450).jpg", "description": "哈尔滨"}, "可乐鸡翅": {"image": "./assets/media/m-f770f433dd.jpg", "source": "https://icook.tw/recipes/426846", "author": "0+1", "license": "版权归原作者，见来源页", "licenseURL": "https://icook.tw/recipes/426846", "actualTitle": "可乐鸡翅", "description": "可乐鸡翅"}, "江西炒粉": {"image": "./assets/media/m-8c99b8fb8f.jpg", "source": "https://www.maigoo.com/citiao/279819.html", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://www.maigoo.com/citiao/279819.html", "actualTitle": "江西炒粉"}, "拍黄瓜": {"image": "./assets/media/m-bd77c1abb8.jpg", "source": "https://note.com/chijintianxia/n/n134372c33cfe", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://note.com/chijintianxia/n/n134372c33cfe", "actualTitle": "拍黄瓜", "description": "拍黄瓜"}, "油焖大虾": {"image": "./assets/media/m-c39c0262b6.jpg", "source": "https://www.sohu.com/a/861978410_122261193", "author": "原文作者", "license": "版权归原作者，见来源页", "licenseURL": "https://www.sohu.com/a/861978410_122261193", "actualTitle": "油焖大虾", "description": "油焖大虾"}, "外婆红烧肉": {"image": "./assets/media/m-94d45a8ca0.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E7%B4%85%E7%87%92%E8%82%89_Braised_pork_in_brown_sauce.jpg", "author": "FotoosVanRobin Photostream", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "紅燒肉_Braised_pork_in_brown_sauce.jpg", "description": "外婆红烧肉"}, "糖醋排骨": {"image": "./assets/media/m-5f445b5659.jpg", "source": "https://www.sohu.com/a/523825303_121245827", "author": "小玥玥最会吃", "license": "版权归原作者，见来源页", "licenseURL": "https://www.sohu.com/a/523825303_121245827", "actualTitle": "糖醋排骨", "description": "糖醋排骨"}, "鸡汤": {"image": "./assets/media/m-1b49a9395a.jpg", "source": "https://www.sohu.com/a/686364212_120972513", "author": "原文作者", "license": "版权归原作者，见来源页", "licenseURL": "https://www.sohu.com/a/686364212_120972513", "actualTitle": "鸡汤", "description": "鸡汤"}, "西红柿鸡蛋": {"image": "./assets/media/m-dba1891c13.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E7%95%AA%E8%8C%84%E7%82%92%E8%9B%8B2.PNG", "author": "三島堂", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "番茄炒蛋2.PNG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled", "description": "Common Chinese dish"}, "虎皮尖椒": {"image": "./assets/media/m-371fa12c6a.jpg", "source": "https://www.sohu.com/a/554219524_115164", "author": "原文作者", "license": "版权归原作者，见来源页", "licenseURL": "https://www.sohu.com/a/554219524_115164", "actualTitle": "虎皮尖椒", "description": "虎皮尖椒"}, "辣椒炒肉": {"image": "./assets/media/m-d7ea54d92d.jpg", "source": "https://k.sina.com.cn/article_2124022621_7e9a035d00100252b.html", "author": "原文作者", "license": "版权归原作者，见来源页", "licenseURL": "https://k.sina.com.cn/article_2124022621_7e9a035d00100252b.html", "actualTitle": "辣椒炒肉", "description": "辣椒炒肉"}, "西红柿面": {"image": "./assets/media/m-403d73eb5b.jpg", "source": "https://icook.tw/recipes/296263", "author": "愛料理官方品牌廚房", "license": "版权归原作者，见来源页", "licenseURL": "https://icook.tw/recipes/296263", "actualTitle": "西红柿面", "description": "西红柿面"}, "老奶洋芋": {"image": "./assets/media/m-225be01c6b.jpg", "source": "https://blog.themalamarket.com/grandmas-potatoes-laonai-yangyu/", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://blog.themalamarket.com/grandmas-potatoes-laonai-yangyu/", "actualTitle": "老奶洋芋", "description": "老奶洋芋"}, "香格里拉": {"image": "./assets/media/m-c24f73546c.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_%28cropped%29.jpg", "author": "瑞丽江的河水", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "松赞林寺_-_全景_-_2025-05-07_09_(cropped).jpg", "description": "香格里拉"}, "德钦": {"image": "./assets/media/m-35f6cd884f.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E5%BE%B7%E9%92%A6%E5%8E%BF%E5%A4%A9%E9%99%85%E7%BA%BF_-_%E8%88%AA%E6%8B%8D_-_2025-05-10_09.jpg", "author": "瑞丽江的河水", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "德钦县天际线_-_航拍_-_2025-05-10_09.jpg", "description": "德钦"}, "芒康": {"image": "./assets/media/m-e943624600.jpg", "source": "https://commons.wikimedia.org/wiki/File:Markam_County_Tibet.jpg", "author": "Reurinkjan", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "Markam_County_Tibet.jpg", "description": "芒康"}, "左贡": {"missing": true, "reason": "排除地图或历史绘画"}, "八宿": {"image": "./assets/media/m-6db0d060b7.jpg", "source": "https://commons.wikimedia.org/wiki/File:Baxoi_County.jpg", "author": "Reurinkan", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "Baxoi_County.jpg", "description": "八宿"}, "波密": {"image": "./assets/media/m-346dc84468.jpg", "source": "https://commons.wikimedia.org/wiki/File:Landscape%2C_Gangxiang_Nature_Reserve%2C_Tibet.jpg", "author": "Gao from Beijing, China", "license": "CC BY 2.0", "licenseURL": "https://creativecommons.org/licenses/by/2.0", "actualTitle": "Landscape,_Gangxiang_Nature_Reserve,_Tibet.jpg", "description": "波密"}, "林芝": {"image": "./assets/media/m-4866fb0e91.jpg", "source": "https://commons.wikimedia.org/wiki/File:Nyingchi_city_June_2019.jpg", "author": "LinasD", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "Nyingchi_city_June_2019.jpg", "description": "林芝"}, "南京博物院": {"image": "./assets/media/m-20419c7f2c.jpg", "source": "https://commons.wikimedia.org/wiki/File:Banner_of_Nanjing_Museum%2C_2015-06-20.jpg", "author": "原图作者，详见来源", "license": "详见原图页面", "licenseURL": "https://commons.wikimedia.org/wiki/File:Banner_of_Nanjing_Museum%2C_2015-06-20.jpg", "actualTitle": "南京博物院", "description": "南京博物院"}, "先锋书店": {"image": "./assets/media/m-453c74ef91.jpg", "source": "https://commons.wikimedia.org/wiki/File:Facade_of_Libraire_Avant-Garde(Wutai_Mountain_branch).jpg", "author": "JosephLai", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "File:Facade of Libraire Avant-Garde(Wutai Mountain branch).jpg", "description": "The bookstore is housed in an underground parking lot on Guangzhou Road in Nanjing, China."}, "梧桐大道": {"image": "./assets/media/m-d5c339577c.jpg", "source": "https://gs.ctrip.com/html5/you/sight/nanjing9/133968374.html", "author": "原图作者，详见来源", "license": "详见原图页面", "licenseURL": "https://gs.ctrip.com/html5/you/sight/nanjing9/133968374.html", "actualTitle": "梧桐大道", "description": "梧桐大道"}, "上海": {"image": "./assets/media/m-a9b2d8cd1c.jpg", "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Shanghai_at_night,_Aug_10_2023.jpg", "author": "A Chinese ID", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "File:Skyline of Shanghai at night, Aug 10 2023.jpg", "description": "Skyline of Shanghai at night, Aug 10 2023"}, "鸡鸣寺": {"image": "./assets/media/m-9f619abb27.jpg", "source": "https://commons.wikimedia.org/wiki/File:Jiming_Temple_Nanjing_-_%E5%8D%97%E4%BA%AC_%E9%B8%A1%E9%B8%A3%E5%AF%BA_(2024)_-_img_19.jpg", "author": "Chainwit.", "license": "CC BY 4.0", "licenseURL": "https://creativecommons.org/licenses/by/4.0", "actualTitle": "File:Jiming Temple Nanjing - 南京 鸡鸣寺 (2024) - img 19.jpg", "description": "Jiming Temple, Nanjing"}, "铜锣山": {"image": "./assets/media/m-427b5567f2.jpg", "source": "https://commons.wikimedia.org/wiki/File:Quzhou_chengqiang_9513.jpg", "author": "Doctoroftcm", "license": "CC BY-SA 3.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0", "actualTitle": "File:Quzhou chengqiang 9513.jpg", "description": "衢州地区配图；铜锣山的实际照片待补。"}, "安顺": {"image": "./assets/media/m-9cd03aec15.jpg", "source": "https://commons.wikimedia.org/wiki/File:%E9%BB%84%E6%9E%9C%E6%A0%91%E7%80%91%E5%B8%83_2026-07-31_01.jpg", "author": "Kcx36", "license": "CC BY-SA 4.0", "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0", "actualTitle": "3840px-黄果树瀑布_2026-07-31_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail", "description": "Waterfall in Guizhou, China"}, "南京大排档": {"image": "./assets/media/m-807d1354a1.jpg", "source": "https://www.trip.com/restaurant/china/nanjing/detail/nanjing-impressions-11255719/", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://www.trip.com/restaurant/china/nanjing/detail/nanjing-impressions-11255719/", "actualTitle": "南京大牌档的烟火气", "description": "夫子庙平江府店菜品陈列与店内实拍"}, "衢州烤馕": {"image": "./assets/media/m-955feb07a1.jpg", "source": "https://ishare.ifeng.com/c/s/7nSOc4AoogW", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://ishare.ifeng.com/c/s/7nSOc4AoogW", "actualTitle": "新疆烤馕", "description": "新疆烤馕实拍，对应衢州念念不忘的烤馕"}, "安顺夜市": {"image": "./assets/media/m-bfaeaf17d2.jpg", "source": "https://www.kevinschoices.com/products/%EC%96%91%EB%85%90-%EC%86%8C%EA%B3%B1%EC%B0%BD-premium-seasoned-beef-small-intestine_8-8oz250g", "author": "原图作者，详见来源", "license": "版权归原作者，详见来源", "licenseURL": "https://www.kevinschoices.com/products/%EC%96%91%EB%85%90-%EC%86%8C%EA%B3%B1%EC%B0%BD-premium-seasoned-beef-small-intestine_8-8oz250g", "actualTitle": "炭火烤牛小肠", "description": "炭火烤牛小肠配图，对应安顺夜市记忆"}};
 const journalImage = key => JOURNAL_PHOTOS[key]?.image || '';
 const originalSeed = seedAtlasExamples;
 seedAtlasExamples = function(d) {
-  if (d.journalVersion === 5) return false;
+  if (d.journalVersion === 6) return false;
   // Remove only untouched preview records, never personal additions.
   d.trips = d.trips.filter(t => !(t.sample && t.id === 'atlas-five-cities'));
   d.restaurants = d.restaurants.filter(r => !(r.sample && r.updatedAt === ATLAS_SEED_DATE));
@@ -4162,8 +3879,9 @@ seedAtlasExamples = function(d) {
       d[key].push(row);
     }
   }
-  if(!d.letter&&d.letters?.length)d.letter=d.letters[0].body||'';
-  d.journalVersion = 5; d.atlasSampleVersion = 1; return true;
+  const mainLetter=d.letters?.find(l=>l.id==='letter-since-0915')||d.letters?.[0];
+  if(mainLetter?.body)d.letter=mainLetter.body;
+  d.journalVersion = 6; d.atlasSampleVersion = 1; return true;
 };
 const existingPhotoInfo = atlasPhotoInfo;
 atlasPhotoInfo = src => Object.values(JOURNAL_PHOTOS).find(p => p.image === src) || existingPhotoInfo(src);
@@ -4214,8 +3932,8 @@ function renderJourney(){
   journalReading.replaceChildren();if(!trip)return;
   const hero=el('div','journey-hero');
   const coverStop=trip.stops.find(s=>s.image);const coverPhoto=trip.coverImage||journalImage(trip.coverPhotoKey||JOURNAL_CONTENT.trips.find(t=>t.id===trip.id)?.coverPhotoKey);if(coverPhoto||coverStop)hero.append(atlasImage(coverPhoto||coverStop.image,trip.title));
-  const copy=el('div','journey-hero-copy');copy.append(el('small','','行迹手记 · '+String(trips.indexOf(trip)+1).padStart(2,'0')+(trip.subtitle?' / '+trip.subtitle:'')),el('h2','',trip.title),el('p','',trip.note));
-  const edit=el('button','journey-read-more','添改这段旅程 ↗');edit.onclick=()=>editTrip(trip.id);copy.append(edit);hero.append(copy);journalReading.append(hero);
+  const copy=el('div','journey-hero-copy');copy.append(el('small','','0'+String(trips.indexOf(trip)+1)+(trip.subtitle?' · '+trip.subtitle:'')),el('h2','',trip.title),el('p','',trip.note));
+  const edit=el('button','journey-read-more','编辑这段旅程 ↗');edit.onclick=()=>editTrip(trip.id);copy.append(edit);hero.append(copy);journalReading.append(hero);
   if(trip.routeContext){const detail=el('details','journey-route-context');detail.append(el('summary','',trip.routeContext.title||'丽江至拉萨 · 滇藏线途经小注'),el('p','',typeof trip.routeContext==='string'?trip.routeContext:trip.routeContext.text));journalReading.append(detail);}
   if(journalMode==='reading')renderTripSpreads(trip,journalReading);
   const foot=el('div','journey-end');
@@ -4268,21 +3986,21 @@ settings=function(){originalSettings();const note=$('.note',$('#modal-content'))
 
 // Section breaks follow changes in the actual journey; stop order always comes from the editable trip.
 const tripPassages = {
-  'nj-food':'初抵金陵 · 烟火、古寺与梧桐',
-  'nj-museum':'博古、淘书与晚风夜骑',
-  'east-shanghai':'沪上启程 · 辩场、乐园与江南水巷',
-  'east-quzhou':'衢州寻味、凌晨山雾与徽州古村',
-  'east-zhangzhou':'走错路的土楼与闽海吹风',
-  'east-quzhou-return':'为一口烤馕折返衢州，再归上海',
-  'taste-changsha':'从长沙三巨头，一路吃到凯里白酸汤',
-  'taste-market':'黔东南赶集 · 发簪与旧草药书',
-  'bed-changsha':'床车南下 · 重温长沙与凯里双酸',
-  'bed-guiyang':'黔中穿行 · 特调咖啡、瀑布与安顺插曲',
-  'bed-chongqing':'临时改道北上 · 吃过渝陕，一路开回北京',
-  'tibet-lijiang':'滇藏攀升 · 从丽江开抵日光城',
-  'tibet-shigatse':'阿里大环线 · 雪山脚下的一措再措',
-  'tibet-zharinam':'藏北旷野 · 美人尖烂路与圣湖村落',
-  'tibet-qiangtang':'穿羌塘出西域，再赴哈尔滨赛场'
+  'nj-food':'在南京走走',
+  'nj-museum':'博物院、书店和夜骑',
+  'east-shanghai':'从上海出发',
+  'east-quzhou':'衢州、铜锣山和黄山',
+  'east-zhangzhou':'福建这一段',
+  'east-quzhou-return':'绕回衢州，再回上海',
+  'taste-changsha':'长沙和凯里',
+  'taste-market':'黔东南赶集',
+  'bed-changsha':'再去长沙和凯里',
+  'bed-guiyang':'贵阳、黄果树和安顺',
+  'bed-chongqing':'从毕节一路开回北京',
+  'tibet-lijiang':'滇藏线到拉萨',
+  'tibet-shigatse':'阿里大环线',
+  'tibet-zharinam':'一路看湖',
+  'tibet-qiangtang':'穿羌塘出新疆，再去哈尔滨'
 };
 const panoramaStops=new Set(['nj-avenue','east-mountain','east-zhangzhou','bed-huangguoshu','tibet-yamdrok','tibet-zharinam']);
 const letterStops=new Set(['east-quzhou-return','taste-market','bed-anshun','nj-night','tibet-harbin']);
@@ -4321,9 +4039,9 @@ function renderTripSpreads(trip,container){
   });
   const nav=el('div','trip-route-nav'),picker=el('select');
   picker.setAttribute('aria-label','跳到沿途的一站');
-  const zero=el('option','','沿途行迹 · 共 '+trip.stops.length+' 站');zero.value='';picker.append(zero);
+  const zero=el('option','','沿途路线 · '+trip.stops.length+' 站');zero.value='';picker.append(zero);
   const nodes=[],num=i=>String(i+1).padStart(2,'0');
-  const mapButton=el('button','','看路线地图 ↗');
+  const mapButton=el('button','','路线地图 ↗');
   function openMap(index){
     const stop=trip.stops[index];journalMode='map';selectedStop=stop.id;renderTravel();
     travelPage.scrollTo({top:0,behavior:'instant'});
@@ -4332,7 +4050,7 @@ function renderTripSpreads(trip,container){
   }
   mapButton.onclick=()=>openMap(Number(picker.value||0));const mark=el('button','trip-bookmark');
   const ribbon=el('span','ribbon-glyph');ribbon.setAttribute('aria-hidden','true');
-  mark.append(ribbon,el('span','','夹书签'));nav.append(picker,mark,mapButton);container.append(nav);
+  mark.append(ribbon,el('span','','书签'));nav.append(picker,mark,mapButton);container.append(nav);
   function updateMark(){
     const stop=trip.stops[Number(picker.value||0)];
     const held=tripBookmark?.trip===trip.id&&tripBookmark.stop===stop.id;
@@ -4756,8 +4474,8 @@ showRestaurant=function(id){
 // Bind the existing recipe buttons into chapters, keeping their edit and detail actions intact.
 (() => {
   const kitchen = document.querySelector('#kitchen-view');
-  kitchen.querySelector('.kitchen-letter h3').textContent = '两人小灶 · 家常菜谱';
-  kitchen.querySelector('#kitchen-random').textContent = '今天翻牌哪道菜 ↻';
+  kitchen.querySelector('.kitchen-letter h3').textContent = '我们家的菜谱';
+  kitchen.querySelector('#kitchen-random').textContent = '挑一道菜 ↻';
 
   const renderCards = renderRecipes;
   renderRecipes = function () {
@@ -4766,7 +4484,7 @@ showRestaurant=function(id){
     const recipes = activeRecipes();
     const count = recipes.length;
     const byTitle = new Map(recipes.map(r => [r.title, r]));
-    kitchen.querySelector('#kitchen-count').textContent = '已经一起攒下 ' + count + ' 道拿手家常菜';
+    kitchen.querySelector('#kitchen-count').textContent = count + ' 道常做的菜';
     const groups = new Map();
     for (const card of grid.querySelectorAll('.recipe-card')) {
       const category = card.querySelector('.recipe-tag').textContent || '其他';
@@ -4828,8 +4546,8 @@ function tripCover(t){return t.coverImage||journalImage(t.coverPhotoKey||JOURNAL
 function openJourneyFromHome(id){journalMode='reading';selectJourney(id);go('travel');}
 function renderHomeJourneys(){
   homeJourneys.replaceChildren();const trips=(data.trips||[]).filter(t=>!t.deletedAt);if(!trips.length)return;
-  const heading=el('div','home-section-heading'),copy=el('div');copy.append(el('h2','','一起走过的远路'));
-  const more=el('button','','摊开足迹地图 ↗');more.onclick=()=>{journalMode='map';go('travel');renderTravel();fitTravelMap();};heading.append(copy,more);homeJourneys.append(heading);
+  const heading=el('div','home-section-heading'),copy=el('div');copy.append(el('h2','','我们去过的地方'));
+  const more=el('button','','去地图看看 ↗');more.onclick=()=>{journalMode='map';go('travel');renderTravel();fitTravelMap();};heading.append(copy,more);homeJourneys.append(heading);
   const grid=el('div','home-trip-grid');
   trips.forEach((t,i)=>{
     const card=el('button','home-trip-card');card.setAttribute('aria-label','打开旅行：'+t.title);
@@ -4853,7 +4571,7 @@ function renderHomeJourneys(){
 const renderBeforeGallery=render;render=function(){renderBeforeGallery();renderHomeJourneys();};
 const goBeforeGallery=go;go=function(next){goBeforeGallery(next);document.body.scrollTop=0;document.documentElement.scrollTop=0;window.scrollTo({top:0,left:0,behavior:'instant'});if(next==='home')renderHomeJourneys();};
 
-const photoLibrary=el('dialog','photo-library');photoLibrary.setAttribute('aria-label','时光底片夹');document.body.append(photoLibrary);
+const photoLibrary=el('dialog','photo-library');photoLibrary.setAttribute('aria-label','照片一览');document.body.append(photoLibrary);
 photoLibrary.addEventListener('click',e=>{if(e.target===photoLibrary)photoLibrary.close();});
 let libraryFilter='all',libraryDensity='large';
 function collectLibraryPhotos(){
@@ -5064,7 +4782,7 @@ function openShowNotebook(show,box){
 }
 
 // A shared watchlist; poster metadata stays separate from personal memories.
-const SHARED_SHOWS=[{"id": "zhenhuan", "title": "甄嬛传", "kind": "电视剧", "genre": "古装 · 经典", "note": "百看不厌的下饭神剧，随便从哪一集点开，我们都能默契地接上下一句台词。", "image": "./assets/media/show-zhenhuan.jpg", "source": "https://movie.douban.com/subject/4922787/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1480046723.jpg"}, {"id": "zhifou", "title": "知否知否应是绿肥红瘦", "kind": "电视剧", "genre": "古装 · 宅院烟火", "note": "最适合捧着热饭或窝在沙发里慢慢看的古装长卷，宅门里的灯火与三餐越看越有味道。", "image": "./assets/media/show-zhifou.jpg", "source": "https://movie.douban.com/subject/26928226/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537131688.jpg"}, {"id": "zhuangqiang", "title": "装腔启示录", "kind": "电视剧", "genre": "都市 · 爱情", "note": "在都市男女的试探与体面交锋里，看到了难得清醒、机灵又带点狡黠的浪漫。", "image": "./assets/media/show-zhuangqiang.jpg", "source": "https://movie.douban.com/subject/35587662/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2897215665.jpg"}, {"id": "bianyou", "title": "你好，对方辩友", "kind": "电视剧", "genre": "校园 · 辩论", "note": "立论、质询、自由辩——属于辩论人的热血与青春底色，一起看的时候格外有共鸣。", "image": "./assets/media/show-bianyou.jpg", "source": "https://movie.douban.com/subject/30227798/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2526337138.jpg"}, {"id": "detective", "title": "明星大侦探", "kind": "综艺", "genre": "推理 · 脑洞", "note": "最下饭也最烧脑的快乐源泉，每次都要在公布真凶前先和对方赌一把谁是凶手。", "image": "./assets/media/show-detective.jpg", "source": "https://movie.douban.com/subject/26737158/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2328705965.jpg"}, {"id": "signal", "title": "心动的信号", "kind": "综艺", "genre": "恋爱观察", "note": "两个人并排坐着看别人谈恋爱，边看边当场外观察员互相锐评，比正片还有意思。", "image": "./assets/media/show-signal.jpg", "source": "https://m.baike.com/wikiid/7239903098263715872", "imageSource": "https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/544dc82e73df45dba79715aa2b055527~tplv-xv4ileqgde-resize-w%3A750.image"}, {"id": "people", "title": "人民的名义", "kind": "电视剧", "genre": "现实 · 群像", "note": "老戏骨同台飙戏的名场面集锦，那些经典台词梗在日常聊天里随时都能接上。", "image": "./assets/media/show-people.jpg", "source": "https://wapbaike.baidu.com/tashuo/browse/content?id=63ebc0fd70f4611e5c1a3d3a", "imageSource": "https://bkimg.cdn.bcebos.com/pic/4a36acaf2edda3cc7cd9410f92bb2e01213fb80e34db"}, {"id": "joy", "title": "欢乐颂", "kind": "电视剧", "genre": "都市 · 生活", "note": "热闹鲜活的都市合租日常，茶余饭后一集接一集，总能聊出不少对生活的感慨。", "image": "./assets/media/show-joy.png", "source": "https://ameblo.jp/kiiroitori-shanghai/entry-12306419384.html", "imageSource": "https://stat.ameba.jp/user_images/20170901/12/kiiroitori-shanghai/f3/17/p/o0393056514017756814.png"}, {"id": "ipartment", "title": "爱情公寓", "kind": "电视剧", "genre": "情景喜剧", "note": "不需要动脑子的快乐背景音，哪怕是早就滚瓜烂熟的老梗，两个人一起看还是会笑出声。", "image": "./assets/media/show-ipartment.jpg", "source": "https://watch.plex.tv/show/ipartment", "imageSource": "https://image.tmdb.org/t/p/w500/Nym3CDGsoGT4rYO6NxQNCIBiKr.jpg"}];
+const SHARED_SHOWS=[{"id": "zhenhuan", "title": "甄嬛传", "kind": "电视剧", "genre": "古装", "image": "./assets/media/show-zhenhuan.jpg", "source": "https://movie.douban.com/subject/4922787/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1480046723.jpg"}, {"id": "zhifou", "title": "知否知否应是绿肥红瘦", "kind": "电视剧", "genre": "古装 · 家庭", "image": "./assets/media/show-zhifou.jpg", "source": "https://movie.douban.com/subject/26928226/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2537131688.jpg"}, {"id": "zhuangqiang", "title": "装腔启示录", "kind": "电视剧", "genre": "都市 · 爱情", "image": "./assets/media/show-zhuangqiang.jpg", "source": "https://movie.douban.com/subject/35587662/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2897215665.jpg"}, {"id": "bianyou", "title": "你好，对方辩友", "kind": "电视剧", "genre": "校园 · 辩论", "image": "./assets/media/show-bianyou.jpg", "source": "https://movie.douban.com/subject/30227798/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2526337138.jpg"}, {"id": "detective", "title": "明星大侦探", "kind": "综艺", "genre": "推理", "image": "./assets/media/show-detective.jpg", "source": "https://movie.douban.com/subject/26737158/", "imageSource": "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2328705965.jpg"}, {"id": "signal", "title": "心动的信号", "kind": "综艺", "genre": "恋爱观察", "image": "./assets/media/show-signal.jpg", "source": "https://m.baike.com/wikiid/7239903098263715872", "imageSource": "https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/544dc82e73df45dba79715aa2b055527~tplv-xv4ileqgde-resize-w%3A750.image"}, {"id": "people", "title": "人民的名义", "kind": "电视剧", "genre": "反腐 · 剧情", "image": "./assets/media/show-people.jpg", "source": "https://wapbaike.baidu.com/tashuo/browse/content?id=63ebc0fd70f4611e5c1a3d3a", "imageSource": "https://bkimg.cdn.bcebos.com/pic/4a36acaf2edda3cc7cd9410f92bb2e01213fb80e34db"}, {"id": "joy", "title": "欢乐颂", "kind": "电视剧", "genre": "都市 · 生活", "image": "./assets/media/show-joy.png", "source": "https://ameblo.jp/kiiroitori-shanghai/entry-12306419384.html", "imageSource": "https://stat.ameba.jp/user_images/20170901/12/kiiroitori-shanghai/f3/17/p/o0393056514017756814.png"}, {"id": "ipartment", "title": "爱情公寓", "kind": "电视剧", "genre": "情景喜剧", "image": "./assets/media/show-ipartment.jpg", "source": "https://watch.plex.tv/show/ipartment", "imageSource": "https://image.tmdb.org/t/p/w500/Nym3CDGsoGT4rYO6NxQNCIBiKr.jpg"}];
 document.querySelectorAll('.home-screening,.screen-entry,.screen-nav').forEach(n=>n.remove());
 const screenRoom=el('section','home-screening');screenRoom.id='together-screen';homePage.append(screenRoom);
 function openScreenRoom(){if(scene!=='home')go('home');screenRoom.scrollIntoView({behavior:reduced?'instant':'smooth',block:'start'});}
@@ -5095,12 +4813,12 @@ function setScreenFeature(id){
 function renderScreenRoom(){
   screenRoom.replaceChildren();
   const theatre=el('div','screen-theatre'),head=el('header','screen-room-head'),intro=el('div');
-  intro.append(el('small','screen-eyebrow','双人放映厅 · 沙发与下饭伴侣'),el('h2','','一起追过'));
-  head.append(intro,el('span','screen-program-count','一起刷过的 '+SHARED_SHOWS.length+' 部剧集与综艺'));
+  intro.append(el('small','screen-eyebrow','双人放映厅'),el('h2','','一起追过'));
+  head.append(intro,el('span','screen-program-count',SHARED_SHOWS.length+' 部剧与综艺'));
   const feature=el('button','screen-feature');
   feature.append(el('img'));
   const fallback=el('div','screen-feature-copy');
-  fallback.append(el('small'),el('h3'),el('button','','翻开追剧手记 ↗'));
+  fallback.append(el('small'),el('h3'),el('button','','打开这部片 ↗'));
   theatre.append(head,feature,fallback);
   const tools=el('div','screen-room-tools'),filters=el('div','screen-filters');
   filters.setAttribute('role','group');filters.setAttribute('aria-label','片单分类');
@@ -5109,7 +4827,7 @@ function renderScreenRoom(){
     button.onclick=()=>{screenFilter=label;draw();};
     filters.append(button);
   }
-  const random=el('button','screen-random','今晚重温哪一部 ↻');
+  const random=el('button','screen-random','挑一部 ↻');
   random.onclick=()=>{
     const matches=SHARED_SHOWS.filter(s=>screenFilter==='全部'||s.kind===screenFilter);
     const choices=matches.length>1?matches.filter(s=>s.id!==lastScreenPick):matches;
@@ -5186,124 +4904,7 @@ function refreshTripBookmark(){
   };
 }
 
-// Curated Special Exhibit on Home: "高原十措 · 阿里看湖图鉴" & "偏爱与插曲 · 私房暗号"
-const curatedSection=el('section','home-curated');
-homeJourneys.after(curatedSection);
-
-const TIBET_LAKE_SWATCHES=[
-  {id:'tibet-yamdrok',color:'#2a8c96',swatch:'羊湖琉璃蓝',tag:'山南 · 28.9°N'},
-  {id:'tibet-chongba',color:'#2e7d6b',swatch:'冲巴翡翠绿',tag:'康马 · 28.2°N'},
-  {id:'tibet-duoqing',color:'#4b849e',swatch:'多情雪映蓝',tag:'亚东 · 28.1°N'},
-  {id:'tibet-pumo',color:'#5b97b3',swatch:'普莫冰川蓝',tag:'洛扎 · 28.5°N'},
-  {id:'tibet-peiku',color:'#276285',swatch:'佩枯深海蓝',tag:'吉隆 · 28.8°N'},
-  {id:'tibet-zharinam',color:'#358894',swatch:'扎日孔雀蓝',tag:'措勤 · 30.9°N'},
-  {id:'tibet-tangra',color:'#1e5778',swatch:'当惹圣湖蓝',tag:'尼玛 · 31.1°N'},
-  {id:'tibet-siling',color:'#236e96',swatch:'色林天际蓝',tag:'申扎 · 31.8°N'},
-  {id:'tibet-dong',color:'#4c7f8c',swatch:'洞错盐湖青',tag:'改则 · 32.0°N'},
-  {id:'tibet-wuma',color:'#5d8d96',swatch:'物玛浅滩青',tag:'改则 · 32.2°N'}
-];
-
-function jumpToTripStop(tripId,stopId){
-  const trip=activeTrips().find(t=>t.id===tripId);
-  if(!trip)return;
-  const idx=trip.stops.findIndex(s=>s.id===stopId);
-  openJourneyFromHome(tripId);
-  if(idx>=0){
-    const picker=journalReading.querySelector('.trip-route-nav select');
-    if(picker){picker.value=String(idx);picker.dispatchEvent(new Event('change'));}
-  }
-}
-
-function renderCuratedSection(){
-  curatedSection.replaceChildren();
-  const tibet=activeTrips().find(t=>t.id==='journal-tibet');
-  const head=el('div','home-section-heading curated-heading'),copy=el('div');
-  copy.append(el('small','curated-eyebrow','SPECIAL ARCHIVE · 山海风物与私房暗号'),el('h2','','我们的特别收录'));
-  const jumpTibet=el('button','','翻看完整藏地来信 ↗');
-  jumpTibet.onclick=()=>openJourneyFromHome('journal-tibet');
-  head.append(copy,jumpTibet);
-  curatedSection.append(head);
-
-  if(tibet){
-    const lakeBox=el('div','lakes-atlas-box');
-    const lakeHeader=el('div','lakes-atlas-header');
-    const lakeTitle=el('div');
-    lakeTitle.append(el('span','lakes-kicker','高原十措 · 一措再措色谱'),el('h3','','阿里大环线上的十片高原蓝'));
-    lakeHeader.append(lakeTitle,el('p','','从日喀则出发一路向西再折向藏北，把我们亲眼看过的十座「措」按水色与纬度排成一列。点开任意一片湖，就能翻回那天的风声。'));
-    const strip=el('div','lakes-swatch-strip');
-    TIBET_LAKE_SWATCHES.forEach((meta,i)=>{
-      const stop=tibet.stops.find(s=>s.id===meta.id);
-      if(!stop)return;
-      const card=el('button','lake-swatch-card');
-      card.type='button';
-      card.style.setProperty('--lake-color',meta.color);
-      const thumb=el('div','lake-swatch-thumb');
-      if(stop.image)thumb.append(atlasImage(stop.image,stop.city));
-      const chip=el('span','lake-color-chip');
-      chip.append(el('i'),el('small','',meta.swatch));
-      thumb.append(chip);
-      const info=el('div','lake-swatch-info');
-      info.append(
-        el('span','lake-order',String(i+1).padStart(2,'0')+' · '+meta.tag),
-        el('strong','',stop.city),
-        el('p','',stop.note||stop.highlights)
-      );
-      card.append(thumb,info);
-      card.onclick=()=>showTravelStop('journal-tibet',stop.id);
-      strip.append(card);
-    });
-    lakeBox.append(lakeHeader,strip);
-    curatedSection.append(lakeBox);
-  }
-
-  const passwordsHead=el('div','curated-subhead');
-  passwordsHead.append(el('h3','','旅途暗号与高光小插曲'),el('span','','只有我们俩秒懂的四个瞬间'));
-  const grid=el('div','curated-capsules-grid');
-  const capsules=[
-    {
-      badge:'执念之味 · 衢州',
-      title:'为了那口新疆烤馕，返程专门杀了个回马枪',
-      text:'第一次长途自驾路过衢州被刚出炉的烤馕香迷糊了，回上海的后半程干脆专门绕道回衢州，实实在在又吃了一顿才甘心。',
-      action:'翻到绕回衢州那天 ↗',
-      onClick:()=>jumpToTripStop('journal-east-coast','east-quzhou-return')
-    },
-    {
-      badge:'点菜定理 · 凯里',
-      title:'「红酸吃鱼，白酸吃肉」',
-      text:'两进黔东南，在牛滚荡喝到了白月光级的白酸汤，又在苗阿哥被滑嫩的红酸汤黄鸭叫惊艳，当场立下我们俩的酸汤法则。',
-      action:'翻到凯里双酸手记 ↗',
-      onClick:()=>jumpToTripStop('journal-bed-car','bed-kaili')
-    },
-    {
-      badge:'旧物与花 · 泉州 & 黔东南',
-      title:'西街的第一次簪花，与集市上的六七十年代草药书',
-      text:'在泉州西街留下花团锦簇的第一次簪花合照；又在黔东南赶集时各自淘到宝——丸子喜欢的发簪，和一本六七十年代的贵州草药古书。',
-      action:'翻看黔东南赶集 ↗',
-      onClick:()=>jumpToTripStop('journal-changsha-kaili','taste-market')
-    },
-    {
-      badge:'不按剧本 · 铜锣山 & 毕节',
-      title:'凌晨五点的大雾、走错路的土楼与直开回北京的床车',
-      text:'摸黑上山没看成日出却刺激难忘，导航导错撞见安静的古村土楼，还有在毕节一拍即合放弃坐飞机、一路吃着火锅面食开回北京的潇洒。',
-      action:'翻到毕节改道北上 ↗',
-      onClick:()=>jumpToTripStop('journal-bed-car','bed-bijie')
-    }
-  ];
-  for(const c of capsules){
-    const card=el('article','curated-capsule');
-    const top=el('span','capsule-badge',c.badge);
-    const h4=el('h4','',c.title);
-    const p=el('p','',c.text);
-    const btn=el('button','capsule-link',c.action);
-    btn.type='button';
-    btn.onclick=c.onClick;
-    card.append(top,h4,p,btn);
-    grid.append(card);
-  }
-  curatedSection.append(passwordsHead,grid);
-}
-
-// Enrich Timeline with the 5 journeys and life collections so it reads like a full chronicle
+// Enrich Timeline with the 5 journeys so it reads like a full chronicle
 const timelineBeforeChapters=renderTimeline;
 renderTimeline=function(){
   timelineBeforeChapters();
@@ -5312,16 +4913,16 @@ renderTimeline=function(){
   let chronicle=$('.timeline-chronicle',wrap);
   if(chronicle)chronicle.remove();
   chronicle=el('section','timeline-year timeline-chronicle');
-  const head=el('h3','','行迹');
-  const intro=el('p','timeline-chronicle-intro','从九月十五出发，一路攒下的五段长途行迹与日常烟火。点开任意一程即可翻阅完整手记。');
+  const head=el('h3','','旅程');
+  const intro=el('p','timeline-chronicle-intro','九月十五以后，一起走过的五趟路。');
   chronicle.append(head,intro);
   const trips=activeTrips();
   trips.forEach((t,i)=>{
     const b=el('button','timeline-item timeline-journey-item');
     b.type='button';
-    const time=el('time','','第 '+String(i+1).padStart(2,'0')+' 程');
+    const time=el('time','','0'+String(i+1));
     const body=el('div');
-    const title=el('strong','',t.title+' · '+(t.subtitle||t.transport||''));
+    const title=el('strong','',t.title+(t.subtitle?' · '+t.subtitle:''));
     const cities=t.stops.map(s=>s.city);
     const routeChain=cities.length>8?(cities.slice(0,5).join(' → ')+' … → '+cities.slice(-2).join(' → ')+'（共 '+cities.length+' 站）'):cities.join(' → ');
     const cap=el('p','',routeChain+'\n'+t.note);
@@ -5342,15 +4943,15 @@ renderTimeline=function(){
   else wrap.append(chronicle);
 };
 
-// 7-star constellation memory whispers in "看星星"
+// Quiet memory hints on the 7 stars in "看星星"
 const STAR_WHISPERS=[
-  '01 · 九月十五的初遇',
-  '02 · 金陵梧桐夜骑',
-  '03 · 铜锣山凌晨五点的雾',
-  '04 · 泉州西街的簪花',
-  '05 · 黔东南的发簪与白酸汤',
-  '06 · 一路向北回京的床车',
-  '07 · 阿里高原的十措星光'
+  '九月十五',
+  '南京夜骑',
+  '铜锣山的雾',
+  '泉州簪花',
+  '凯里白酸汤',
+  '床车回北京',
+  '阿里看湖'
 ];
 const drawStarsBeforeChapters=drawStars;
 drawStars=function(){
@@ -5366,22 +4967,10 @@ drawStars=function(){
 };
 drawStars();
 
-// Vintage postmark on the letter stationery
-const paperEl=$('#paper');
-if(paperEl&&!$('.paper-postmark',paperEl)){
-  const stamp=el('div','paper-postmark');
-  stamp.append(
-    el('span','postmark-code','ARCHIVE NO. 0915 — 1122'),
-    el('span','postmark-route','金陵 · 衢州 · 凯里 · 阿里 · 北京')
-  );
-  paperEl.prepend(stamp);
-}
-
 const renderBeforeBookmark=render;
 render=function(){
   renderBeforeBookmark();
   refreshTripBookmark();
-  renderCuratedSection();
 };
 
 // Hand-built miniature keepsakes. Static pieces are baked into a few coloured meshes.
