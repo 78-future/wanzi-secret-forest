@@ -3062,11 +3062,14 @@ body[data-scene="home"].reading-contents :is(.header, .footer) {
     transform: translateY(0) rotate(0.2deg) scale(1);
   }
 }
+.letter .letter-desk {
+  margin-top: 66px !important;
+}
 .letter .paper {
   opacity: 1;
   width: min(680px, 92vw) !important;
-  max-height: calc(100dvh - 200px) !important;
-  padding: clamp(32px, 4.5vw, 50px) clamp(26px, 5vw, 58px) 34px !important;
+  max-height: calc(100dvh - 252px) !important;
+  padding: clamp(32px, 4.5vw, 48px) clamp(26px, 5vw, 56px) 34px !important;
   background:
     radial-gradient(ellipse 80% 50% at 15% 10%, rgba(255, 253, 245, 0.94), transparent 70%),
     linear-gradient(180deg, #faf5e8 0%, #f5eedd 100%) !important;
@@ -3430,6 +3433,12 @@ body[data-scene="stars"] .star-reset:hover {
   .letter .letters-controls button {
     font-size: 12px;
     min-height: 40px;
+  }
+  .letter .letter-desk {
+    margin-top: 60px !important;
+  }
+  .letter .paper {
+    max-height: calc(100dvh - 268px) !important;
   }
 }
 
@@ -4855,12 +4864,12 @@ renderScreenRoom();
 
 // Chapters describe shared activities; photos and the timeline are reading tools.
 const memoirChapters=[
- ['album','日常小事','随手留下的合照、票根，和当时没忍住笑出来的小事'],
- ['travel','一起出发','从南京夜骑到阿里环线，我们越开越远的五段长路'],
- ['food','好好吃饭','在外面找馆子解馋，也在家里围着小灶研究新菜'],
- ['screen','一起追过','捧着饭碗或者窝在沙发里，一集接一集看过的故事'],
- ['letter','写给彼此','平日里不好意思说太慢的话，折进信封慢慢读'],
- ['plans','下次一起','想去吹风的远方、想二刷的小店，先记在这里']
+ ['album','日常小事','照片、视频和想记住的小事'],
+ ['travel','一起出发','去过的地方，路上的故事'],
+ ['food','好好吃饭','外面吃的，自己做的'],
+ ['screen','一起追过','一起看过的剧和综艺'],
+ ['letter','写给彼此','有些话，想留给你'],
+ ['plans','下次一起','还想一起去做的事']
 ];
 function openMemoirChapter(key){if(key==='screen')openScreenRoom();else{if(key==='food')switchFood('restaurants');if(key==='travel')journalMode='reading';go(key);}}
 // Keep the existing kitchen shortcut available to exported HTML initialization.
